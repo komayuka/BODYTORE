@@ -34,5 +34,5 @@ https://docs.google.com/spreadsheets/d/1IznQNNq867pejbmzDetbyAXaGhtB5YweqgnDcc-Z
 
 ## 使用素材
 画像素材　 ぱくたそ  www.pakutaso.com　
-音声素材を使用した場合は、必ずサービス名とURLを明記してください。
+- 音声素材を使用した場合は、必ずサービス名とURLを明記してください。
 - 使用しな場合は、使用素材の項目をREADMEから削除してください。
