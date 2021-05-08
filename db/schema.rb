@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_08_014135) do
+ActiveRecord::Schema.define(version: 2021_05_08_101248) do
 
   create_table "customers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -19,11 +19,11 @@ ActiveRecord::Schema.define(version: 2021_05_08_014135) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "customer_name", null: false
-    t.string "customer_image_id", null: false
-    t.integer "body_weight", null: false
-    t.integer "height", null: false
+    t.string "customer_image_id"
+    t.integer "body_weight"
+    t.integer "height"
     t.integer "age", null: false
-    t.text "customer_introduction", null: false
+    t.text "customer_introduction"
     t.integer "gender", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -38,9 +38,9 @@ ActiveRecord::Schema.define(version: 2021_05_08_014135) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "trainer_name", null: false
-    t.text "trainer_introduction", null: false
-    t.integer "rate", null: false
-    t.string "trainer_image_id", null: false
+    t.text "trainer_introduction"
+    t.integer "rate"
+    t.string "trainer_image_id"
     t.integer "gender", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
