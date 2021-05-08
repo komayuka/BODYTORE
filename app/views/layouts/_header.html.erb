@@ -1,4 +1,35 @@
 <header class="sticky-top">
+  <nav class="navber navber-dark navbar-expand-md">
+    <div class="container">
+      <a class="nav-link", href="/"><img src="/assets/header_logo.png", class="header_logo"></a>
+      <button class="navber-toggler" type="button" data-toggle="collapse" data-target="#navberNavDropdown" aria-controls="navberNavDropdown" aria-expand="false" aria-label="Toggle nabigation">
+        <span class="navber-toggler-icon"></span>
+      </button>
+      <div class="collapse navber-collapse" id="navberNavDropdown">
+        <ul class="navber-nav ml-auto">
+          <% if customer_signed_in? %>
+          <!--customerヘッダー-->
+           <div class="nav-link text-light mr-5 mt-3"></div>
+           <li>
+             <%= link_to "ログアウト", destroy_customer_session_path, method: :dalete %>
+           </li>
+           <% elsif trainer_signed_in? %>
+           <!--trainerヘッダー-->
+           <li>
+             <%= link_to "ログアウト", destroy_trainer_session_path, method: :delete %>
+           </li>
+           <% else %>
+           <li>
+             <%= link_to "新規登録", new_customer_registration_path %>
+           </li>
+           <li>
+             <%= link_to "ログイン", new_customer_session_path %>
+           </li>
+           <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
 
 </header>
