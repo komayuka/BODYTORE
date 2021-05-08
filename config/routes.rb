@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :trainers,  controllers: {
     sessions:      'trainers/sessions',
     password:      'trainers/password',
@@ -9,5 +10,13 @@ Rails.application.routes.draw do
     password:      'customers/password',
     registrations: 'customers/registrations'
   }
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-end
+
+
+
+ # customer側サイトrouting
+  scope module: :customer do
+    root 'homes#top'
+    get 'about' => 'homes#about'
+  end
+
+ end

@@ -20,7 +20,7 @@
 
   <div class="gender">
     <%= f.label :gender %><br />
-    <%= f.text_field :gender, autofocus: true %>
+    <%= f.select :gender, Customer.genders.keys, {prompt: "選択してください"}, class: 'signup_input signup_input--gender error-form--gender' %>
   </div>
 
   <div class="field">

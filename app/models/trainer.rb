@@ -3,4 +3,11 @@ class Trainer < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+
+  enum gender: {
+    "男性": 0,
+    "女性": 0,
+  }
+
 end
