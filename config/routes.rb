@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     registrations: 'customers/registrations'
   }
 
+#trainer側サイトrouting
+ namespace :trainer do
+ end
 
 
  # customer側サイトrouting
