@@ -11,15 +11,15 @@ Rails.application.routes.draw do
     registrations: 'customers/registrations'
   }
 
-#trainer側サイトrouting
- namespace :trainer do
- end
+
+  root 'homes#top'
+  #trainer側サイトrouting
+  namespace :trainer do
+  end
 
 
- # customer側サイトrouting
+  # customer側サイトrouting
   scope module: :customer do
-    root 'homes#top'
-    get 'about' => 'homes#about'
   end
 
  end
