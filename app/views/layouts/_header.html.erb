@@ -12,7 +12,7 @@
            <div class="nav-link text-light mr-5 mt-3">
             ようこそ <%= current_customer.customer_name %>さん
            </div>
-           <li><%= link_to "ログアウト", destroy_customer_session_path, method: :dalete %></li>
+           <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
            <% elsif trainer_signed_in? %>
            <!--trainerヘッダー-->
            <li><%= link_to "ログアウト", destroy_trainer_session_path, method: :delete %></li>
