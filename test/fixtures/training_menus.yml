@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  training_id: 1
+  trainer_id: 1
+  customer_id: 1
+  training_name: MyString
+  category: 1
+  description: MyText
+  training_menu_status: 1
+
+two:
+  training_id: 1
+  trainer_id: 1
+  customer_id: 1
+  training_name: MyString
+  category: 1
+  description: MyText
+  training_menu_status: 1

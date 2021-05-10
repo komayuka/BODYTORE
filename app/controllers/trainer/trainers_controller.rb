@@ -1,4 +1,4 @@
-class Customer::CustomersController < ApplicationController
+class Trainer::TrainersController < ApplicationController
 
   def index
   end
@@ -11,4 +11,5 @@ class Customer::CustomersController < ApplicationController
 
   def update
   end
+
 end
