@@ -1,4 +1,7 @@
 class Trainer < ApplicationRecord
+  has_many :training
+  has_many :training_menu
+
 
   validates :trainer_name, presence: true
   validates :trainer_introduction, length: { maximum: 50 }

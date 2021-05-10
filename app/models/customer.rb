@@ -1,4 +1,6 @@
 class Customer < ApplicationRecord
+  has_many :training_menu
+
   validates :customer_name, uniqueness: true, length: { in: 2..20 }
   validates :customer_introduction, length: { maximum: 50 }
   validates :age, numericality: true
