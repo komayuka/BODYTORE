@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+      <h2>登録情報編集</h2>
+
+      <%= form_with model: @trainer, url: trainers_profile_path, local: :true do |f| %>
+
+      <div class="field">
+        <%= f.label :trainer_image, "画像" %>
+        <%= f.attachment_field :trainer_image %>
+      </div>
+
+      <div class="field">
+        <%= f.label :trainer_name, "名前" %>
+        <%= f.text_field :trainer_name %>
+      </div>
+
+      <div  class="field">
+        <%= f.label :trainer_introduction, "自己紹介" %>
+        <%= f.text_field :trainer_intruduction %>
+      </div>
+
+     <%= f.submit "更新" %>
+     <% end %>
+    </div>
+  </div>
+</div>

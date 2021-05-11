@@ -3,8 +3,10 @@ class Trainer < ApplicationRecord
   has_many :training_menu
 
 
-  validates :trainer_name, presence: true
+  validates :trainer_name, uniqueness: true, length: { in: 2..20 }
   validates :trainer_introduction, length: { maximum: 50 }
+
+  attachment :trainer_image
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
