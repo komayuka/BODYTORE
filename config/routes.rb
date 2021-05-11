@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resource :trainers,  only: [:show, :update]
     get 'trainers/profile/edit' => 'trainers#edit'
     patch 'trainers/profile' => 'trainers#update'
+    resources :training_menus
   end
 
 
@@ -28,6 +29,7 @@ Rails.application.routes.draw do
     resource :customers, only: [:show, :update]
      get 'customers/profile/edit' => 'customers#edit'
      patch 'customers/profile' => 'customers#update'
+     resources :training_menus, only: [:index, :show]
   end
 
  end

@@ -11,7 +11,7 @@ class Trainer::TrainersController < ApplicationController
   def update
     @trainer = current_trainer
     if @trainer.update(trainer_params)
-      redirect_to trainers_profile_path
+      redirect_to trainer_params
     else
       render "edit"
     end
