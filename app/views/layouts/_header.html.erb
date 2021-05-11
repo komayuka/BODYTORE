@@ -1,7 +1,7 @@
 <header class="sticky-top">
   <nav class="navbar navbar-dark navbar-expand-md">
     <div class="container">
-      <a class="nav-link", href="/"><img src="/assets/header_log.png", class="header_logo"></a>
+      <a class="nav-link", href="/"><%= image_tag asset_path('header_log.png'), class: "header_logo" %></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbaNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -12,16 +12,18 @@
            <div class="nav-link text-light mr-5 mt-3">
             ようこそ <%= current_customer.customer_name %>さん
            </div>
+           <li><%= link_to "マイページ", customers_path(current_customer) %></li>
            <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
+
            <% elsif trainer_signed_in? %>
            <!--trainerヘッダー-->
+           <li><%= link_to "マイページ", trainers_path(current_trainer) %></li>
+           <li><%= link_to "トレーニングメニュー", training_menus_path(current_trainer) %></li>
            <li><%= link_to "ログアウト", destroy_trainer_session_path, method: :delete %></li>
            <% else %>
-           <li><%= link_to "新規登録", new_customer_registration_path %></li>
-           <li><%= link_to "ログイン", new_customer_session_path %></li>
+           
            <li><%= link_to 'home', root_path %></li>
-           <li><%= link_to "新規登録", new_trainer_registration_path %></li>
-           <li><%= link_to "ログイン", new_trainer_session_path %></li>
+           
 
            <% end %>
         </ul>
