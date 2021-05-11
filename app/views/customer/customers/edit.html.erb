@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+     <h2>登録情報編集</h2>
+
+     <%= form_with model: @customer, url: customers_profile_path, local: :true do |f| %>
+
+     <div class="field">
+       <%= f.label :customer_image, "画像" %><br />
+       <%= f.attachment_field :customer_image %>
+     </div>
+
+     <div class="field">
+       <%= f.label :customer_name, "名前" %><br />
+       <%= f.text_field :customer_name %>
+     </div>
+
+     <div class="field">
+       <%= f.label :customer_introduction, "自己紹介" %><br />
+       <%= f.text_field :customer_introduction %>
+     </div>
+
+     <div class="field">
+       <%= f.label :age, "年齢" %><br />
+       <%= f.text_field :age %>
+     </div>
+
+     <div class="field">
+       <%= f.label :body_weight, "体重" %><br />
+       <%= f.text_field :body_weight %>kg
+     </div>
+
+     <div class="field">
+       <%= f.label :height, "身長" %><br />
+       <%= f.text_field :height %>cm
+     </div><br />
+
+      <%= f.submit '更新' %>
+     <% end %>
+
+    </div>
+  </div>
+</div>

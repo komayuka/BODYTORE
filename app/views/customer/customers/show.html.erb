@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+
+      <h2>マイページ</h2>
+      <div>
+        <strong>登録情報</strong>
+
+      </div>
+      <table>
+        <% if current_customer.customer_image == nil %>
+        <p><%= image_tag asset_path('no_image.png'), size: '120x120' %></p>
+        <% else %>
+        <p><%= attachment_image_tag current_customer, :customer_image, size: '120x120' %></p>
+        <% end  %>
+        <thead>
+            <th></th>
+            <tr>
+              <th>名前</th>
+              <td><%= current_customer.customer_name %></td>
+            </tr>
+            <tr>
+              <th>自己紹介</th>
+              <td><%= current_customer.customer_introduction %></td>
+            </tr>
+            <tr>
+              <th>年齢</th>
+              <td><%= current_customer.age %></td>
+            </tr>
+            <tr>
+              <th>性別</th>
+              <td><%= current_customer.gender %></td>
+            </tr>
+            <tr>
+              <th>体重</th>
+              <td><%= current_customer.body_weight %></td>
+            </tr>
+            <tr>
+              <th>身長</th>
+              <td><%= current_customer.height %></td>
+            </tr>
+            <tr>
+              <th>BMI</th>
+              <td><%= current_customer.body_weight %></td>
+            </tr>
+            <th></th>
+
+        </thead>
+      </table>
+       <%= link_to "編集", customers_profile_edit_path %>
+    </div>
+  </div>
+</div>

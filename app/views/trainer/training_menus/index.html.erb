@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+    <h2>トレーニングメニュー一覧</h2>
+    <table>
+      <div class="text-right">
+        <%= link_to new_training_menu_path, class: "btn btn-secondary text-right" do %>
+        <i class="fas fa-plus-circle"></i>
+        <% end %>
+      </div>
+      <thead>
+        <tr>
+          <th>トレーニングID</th>
+          <th>トレーニング名</th>
+          <th>カテゴリ</th>
+          <th>トレーニング説明</th>
+          <th>ステータス</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @training_menus.each do |training_menu| %>
+        <tr>
+          <td><%= training_menu.id %></td>
+          <td><%= link_to training_menu_path(training_menu.id) do %>
+              <%= training_menu.training_name %>
+              <% end %>
+          </td>
+          <td><%= training_menu.description %></td>
+          <td><%= training_menu.category %></td>
+          <td><%= training_menu.training_menu_status %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
