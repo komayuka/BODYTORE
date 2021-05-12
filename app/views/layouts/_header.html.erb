@@ -13,6 +13,7 @@
             ようこそ <%= current_customer.customer_name %>さん
            </div>
            <li><%= link_to "マイページ", customers_path(current_customer) %></li>
+           <li><%= link_to "トレーナー一覧", customers_trainers_path %></li>
            <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
 
            <% elsif trainer_signed_in? %>

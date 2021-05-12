@@ -4,15 +4,21 @@
       <table>
         <div class="text-center">
         <%= image_tag asset_path('welcome.png'), size: "300x100" %>
-        <p>BODYTORE(ボディトレ)とは、</p>
+        <div class="text-comment">
+        <p><h4>BODYTORE(ボディトレ)とは?</h4>
+               日常生活に運動を取り入れることで、健康的な生活を送りたい。<br />
+               運動不足など解消したい方に向けてトレーニングの情報サイトです。<br />
+               トレーニングを実施する際は、会員登録が必要となります。
+           </p>
+        </div>
         </div>
         <div class="row">
         <div class="col-5 text-left col-md-offset-1">
           <div class="left-comment">
-            会員の方に向けて、トレーニング情報を提供しませんか？<br />
-            カテゴリー別に分けて、得意な分野のトレーニングを<br />
-            登録して公開していきましょう！
-          </div>
+            &ensp; 会員の方に向けて、トレーニング情報を提供しませんか？<br />
+            &ensp; カテゴリー別に分けて、得意な分野のトレーニングを<br />
+            &ensp; 登録して公開していきましょう！
+          </div><br />
           <p>トレーナーの方はこちら</p>
            <%= link_to "新規登録", new_trainer_registration_path %><br />
            <%= link_to "ログイン", new_trainer_session_path %>
@@ -21,10 +27,10 @@
 
         <div class="col-5 text-right col-md-offset-1">
           <div class="right-comment">
-          ダイエット、ボディメイク、健康的な生活を送りたい方！<br />
-          好きなトレーニングを選んで運動しませんか？<br />
-          日常の中に取り入れて、理想の自分に近付きましょう。
-          </div>
+          ダイエット、ボディメイク、健康的な生活を送りたい方！&ensp;<br />
+          好きなトレーニングを選んで運動しませんか？&ensp;<br />
+          日常の中に取り入れて、理想の自分に近付きましょう。&ensp;
+          </div><br />
           <p>会員の方はこちら</p>
            <%= link_to "新規登録", new_customer_registration_path %><br />
            <%= link_to "ログイン", new_customer_session_path %>

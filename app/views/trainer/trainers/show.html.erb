@@ -9,7 +9,7 @@
       </div>
       <table>
         <% if current_trainer.trainer_image == nil %>
-        <p><%= image_tag asset_path('no_image.png'), size: '120x120' %></p>
+        <p><%= image_tag asset_path('default.png'), size: '120x120' %></p>
         <% else %>
         <p><%= attachment_image_tag current_trainer, :trainer_image, size: '120x120' %></p>
         <% end %>
