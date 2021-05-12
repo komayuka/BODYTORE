@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_10_074503) do
+ActiveRecord::Schema.define(version: 2021_05_12_122148) do
 
   create_table "customers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -49,9 +49,8 @@ ActiveRecord::Schema.define(version: 2021_05_10_074503) do
   end
 
   create_table "training_menus", force: :cascade do |t|
-    t.integer "training_id", null: false
-    t.integer "trainer_id", null: false
-    t.integer "customer_id", null: false
+    t.integer "trainer_id"
+    t.integer "customer_id"
     t.string "training_name", null: false
     t.integer "category", null: false
     t.text "description"
@@ -61,11 +60,10 @@ ActiveRecord::Schema.define(version: 2021_05_10_074503) do
   end
 
   create_table "trainings", force: :cascade do |t|
-    t.integer "training_menu_id", null: false
-    t.integer "trainer_id", null: false
+    t.integer "training_menu_id"
     t.text "training_description"
     t.string "training_name", null: false
-    t.boolean "training_status", default: false, null: false
+    t.integer "training_status", default: 0, null: false
     t.string "training_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

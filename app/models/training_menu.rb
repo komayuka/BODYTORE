@@ -1,7 +1,9 @@
 class TrainingMenu < ApplicationRecord
   belongs_to :trainer
-  belongs_to :training
-  belongs_to :customer
+  has_many :trainings
+  #別のモデルを同じフォームで保存/trainings単体削除
+  accepts_nested_attributes_for :trainings, allow_destroy: true
+  belongs_to :customer, optional: true
 
   enum category: {
     "ヨガ": 0,

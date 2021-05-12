@@ -20,10 +20,11 @@
       <%= f.text_field :description %>
     </div>
 
-    <div class="field">
-      <%= f.label  :training_status, "ステータス" %><br />
-      <%= f.radio_button :training_status, 0 %>未対応
-    </div>
+    <%= f.hidden_field :training_menu_status, {value: '未対応'} %>
+
+    <%= f.fields_for :trainings do |training| %>
+       <%= render 'form_fields', ff: training %> <!--ffは子要素のフォーム-->
+    <% end %>
 
     <p></p>
     <div><%= f.submit '新規登録' %></div>

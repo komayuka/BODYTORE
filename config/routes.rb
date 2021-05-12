@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   #trainer側サイトrouting
   scope module: :trainer do
-    resources :trainers,  only: [:show, :update]
+    resource :trainers,  only: [:show, :update]
     get 'trainers/profile/edit' => 'trainers#edit'
     patch 'trainers/profile' => 'trainers#update'
     resources :training_menus

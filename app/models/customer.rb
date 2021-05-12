@@ -20,4 +20,5 @@ class Customer < ApplicationRecord
     "女性": 1,
   }
 
+
 end
