@@ -2,11 +2,12 @@ class Trainer::TrainingMenusController < ApplicationController
 
   def new
     @training_menu = TrainingMenu.new
+    @training_menu.trainings.build #trainings一緒に保存
   end
 
   def index
     @training_menu = TrainingMenu.new
-    @training_menus = TrainingMenu.find(params[:id])
+    @training_menus = TrainingMenu.all
   end
 
   def show
@@ -15,11 +16,9 @@ class Trainer::TrainingMenusController < ApplicationController
 
   def create
     @training_menu = TrainingMenu.new(training_menu_params)
-    if @training_menu.save
-      redirect_to training_menus_path(@training_menu.id)
-    else
-      render "new"
-    end
+    @training_menu.trainer_id = current_trainer.id
+    @training_menu.save
+    redirect_to training_menus_path(@training_menu.id)
   end
 
   def edit
@@ -38,7 +37,9 @@ class Trainer::TrainingMenusController < ApplicationController
   private
 
   def training_menu_params
-    params.require(:training_menu).permit(:training_id, :trainer_id, :customer_id, :training_name, :category, :description, :training_menu_status)
+    params.require(:training_menu).permit(:training_name, :category, :description, :training_menu_status,
+                                           trainings_attributes: [:id, :training_status, :training_name, :training_description, :_destroy]
+                                         )
   end
 
 end

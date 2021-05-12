@@ -1,6 +1,7 @@
 class Training < ApplicationRecord
-  has_many :training_menu
-  belongs_to :trainer
+  belongs_to :training_menu
 
-  
+
+  enum training_status: {"未着手": 0,"完了": 1}
+
 end
