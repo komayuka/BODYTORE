@@ -1,7 +1,24 @@
 <div class="container">
   <div class="row">
     <div class="col">
+      <h2>トレーニングメニュー詳細</h2>
+      <table>
+        <thead>
+          <tr>
+            <td>トレーニング名</td>
+            <td>カテゴリー</td>
+            <td>トレーニング説明</td>
+            <td></td>
+          </tr>
+        </thead>
 
+        <tbody>
+          <th><%= @training_menu.training_name %></th>
+          <th><%= @training_menu.category %></th>
+          <th><%= @training_menu.description %></th>
+        </tbody>
+      </table>
+      <%= link_to '編集', edit_training_menu_path %>
 
     </div>
   </div>

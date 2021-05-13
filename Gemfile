@@ -70,7 +70,7 @@ gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
 gem 'pry-byebug'
 gem 'kaminari','~> 1.2.1'
-
+gem "cocoon"
 
 gem 'dotenv-rails'
 group :production do

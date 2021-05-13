@@ -2,33 +2,38 @@
   <div class="row">
     <div class="col">
 
-    <h2>トレーニングメニュー新規登録</h2>
-    <%= form_with model: @training_menu, local: :true do |f| %>
+     <h2>トレーニングメニュー新規登録</h2>
+     <%= form_with model: @training_menu, local: :true do |f| %>
 
-    <div class="field">
-      <%= f.label :training_name, "トレーニング名" %><br />
-      <%= f.text_field :training_name %>
-    </div>
+      <div class="field">
+        <%= f.label :training_name, "トレーニング名" %><br />
+        <%= f.text_field :training_name %>
+      </div>
 
-    <div class="category">
-      <%= f.label :category, "カテゴリー" %><br />
-      <%= f.select :category, TrainingMenu.categories.keys, {prompt:"選択してください"}, class: 'signup_input signup_input--category error-form--category' %>
-    </div>
+      <div class="category">
+        <%= f.label :category, "カテゴリー" %><br />
+        <%= f.select :category, TrainingMenu.categories.keys, {prompt:"選択してください"}, class: 'signup_input signup_input--category error-form--category' %>
+      </div>
 
-    <div class="field">
-      <%= f.label :description, "トレーニング説明" %><br />
-      <%= f.text_field :description %>
-    </div>
+      <div class="field">
+        <%= f.label :description, "トレーニング説明" %><br />
+        <%= f.text_field :description %>
+      </div>
 
-    <%= f.hidden_field :training_menu_status, {value: '未対応'} %>
+        <%= f.hidden_field :training_menu_status, {value: '未対応'} %>
 
-    <%= f.fields_for :trainings do |training| %>
-       <%= render 'form_fields', ff: training %> <!--ffは子要素のフォーム-->
-    <% end %>
+        <!--training内容投稿（子要素）-->
+        <%= f.fields_for :trainings do |training| %>
+           <%= render 'form_fields', ff: training %> <!--ffは子要素のフォーム-->
+        <% end %>
 
-    <p></p>
-    <div><%= f.submit '新規登録' %></div>
-    <% end %>
-    </div>
+        <div id="links">
+          <%= link_to_add_association '追加', f, :trainings %>
+        </div>
+
+      <p></p>
+      <div><%= f.submit '新規登録' %></div>
+     <% end %>
+   </div>
   </div>
 </div>

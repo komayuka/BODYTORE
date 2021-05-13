@@ -3,15 +3,14 @@ class TrainingMenu < ApplicationRecord
   has_many :trainings
   #別のモデルを同じフォームで保存/trainings単体削除
   accepts_nested_attributes_for :trainings, allow_destroy: true
+  #optional=>nilでも可
   belongs_to :customer, optional: true
 
   enum category: {
     "ヨガ": 0,
-    "腹筋": 1,
-    "腕": 2,
-    "胸": 3,
-    "お尻": 4,
-    "下半身": 5
+    "筋トレ": 1,
+    "有酸素": 2,
+    "ストレッチ": 3,
   }
 
   enum training_status: {

@@ -8,8 +8,14 @@
 
       <p><%= link_to customers_trainers_path(trainer.id) do %>
          <%= trainer.trainer_name %>
-
          <% end %>
+         <% trainer.training_menu.each do |a| %>
+         <%= link_to customers_training_menus_path(trainer.id) do %>
+         <%= a.category %>
+         <% end %>
+         <% end %>
+
+
       </p>
 
 
