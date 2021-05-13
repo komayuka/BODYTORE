@@ -31,7 +31,8 @@ Rails.application.routes.draw do
      patch 'customers/profile' => 'customers#update'
     get 'customers/trainers' => 'trainers#index'
     get 'customers/trainers/:id' => 'trainers#show'
-    resources :training_menus, only: [:index, :show]
+    get 'customers/training_menus' => 'training_menus#index'
+    get 'customers/training_menus/:id' => 'training_menus#show'
   end
 
  end
