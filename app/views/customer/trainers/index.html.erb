@@ -6,11 +6,11 @@
       <% @trainers.each do |trainer| %>
       <%= attachment_image_tag trainer, :trainer_image, size: "150x150", class:"attachment trainer trainer_image fallback" %>
 
-      <p><%= link_to customers_trainers_path(trainer.id) do %>
+      <p><%= link_to customer_trainers_path(trainer.id) do %>
          <%= trainer.trainer_name %>
          <% end %>
          <% trainer.training_menu.each do |a| %>
-         <%= link_to customers_training_menus_path(trainer.id) do %>
+         <%= link_to trainer_training_menus_path(trainer.id) do %>
          <%= a.category %>
          <% end %>
          <% end %>

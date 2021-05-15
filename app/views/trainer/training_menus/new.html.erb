@@ -3,7 +3,7 @@
     <div class="col">
 
      <h2>トレーニングメニュー新規登録</h2>
-     <%= form_with model: @training_menu, local: :true do |f| %>
+     <%= form_with model: @training_menu, url: new_trainer_training_menu_path, local: :true do |f| %>
 
       <div class="field">
         <%= f.label :training_name, "トレーニング名" %><br />
@@ -27,9 +27,7 @@
            <%= render 'form_fields', ff: training %> <!--ffは子要素のフォーム-->
         <% end %>
 
-        <div id="links">
-          <%= link_to_add_association '追加', f, :trainings %>
-        </div>
+
 
       <p></p>
       <div><%= f.submit '新規登録' %></div>

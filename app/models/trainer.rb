@@ -1,10 +1,12 @@
 class Trainer < ApplicationRecord
-  has_many :training
-  has_many :training_menu
-
-
   validates :trainer_name, uniqueness: true, length: { in: 2..20 }
   validates :trainer_introduction, length: { maximum: 50 }
+
+
+  has_many :training
+  has_many :training_menu
+  has_many :favorites, dependent: :destroy
+
 
   attachment :trainer_image
 
@@ -18,5 +20,9 @@ class Trainer < ApplicationRecord
     "男性": 0,
     "女性": 0,
   }
+
+  def favorites_by?(customer)
+    favorites.where(customer_id: cistomer.id).exists?
+  end
 
 end
