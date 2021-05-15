@@ -20,5 +20,8 @@ class Customer < ApplicationRecord
     "女性": 1,
   }
 
+def bmi(body_weight,height)
+  (body_weight / (height*0.1) ** 2 * 100).round(1)
+end
 
 end

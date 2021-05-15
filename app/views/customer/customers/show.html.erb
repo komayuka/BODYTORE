@@ -42,7 +42,11 @@
             </tr>
             <tr>
               <th>BMI</th>
-              <td></td>
+              <% if current_customer.body_weight.present? && current_customer.height.present? %>
+              <td><%= current_customer.bmi(current_customer.body_weight,current_customer.height) %></td>
+              <% else %>
+              <td>身長と体重を入力してください。</td>
+              <% end %>
             </tr>
             <th></th>
 
