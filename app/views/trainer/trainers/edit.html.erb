@@ -3,7 +3,7 @@
     <div class="col">
 
       <h2>登録情報編集</h2>
-
+      <%= render 'layouts/error_messages', validation: @trainer %>
       <%= form_with model: @trainer, url: trainers_profile_path, local: :true do |f| %>
 
       <div class="field">

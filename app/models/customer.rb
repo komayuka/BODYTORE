@@ -1,10 +1,13 @@
 class Customer < ApplicationRecord
-  has_many :training_menu
-  has_many :training, through: :training_menu
-
   validates :customer_name, uniqueness: true, length: { in: 2..20 }
   validates :customer_introduction, length: { maximum: 50 }
   validates :age, numericality: true
+
+  has_many :training_menu
+  has_many :training, through: :training_menu
+  has_many :favorites, dependent: :destroy
+
+
 
   attachment :customer_image
 

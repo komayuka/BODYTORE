@@ -5,9 +5,9 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     case resource
     when Trainer
-      trainers_path
+      trainer_path(current_trainer)
     when Customer
-      customers_path
+      customer_path
     end
   end
 
