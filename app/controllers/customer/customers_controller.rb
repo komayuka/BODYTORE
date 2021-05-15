@@ -13,6 +13,7 @@ class Customer::CustomersController < ApplicationController
   def update
     @customer = current_customer
     if @customer.update(customer_params)
+      flash[:notice] = "更新されました。"
       redirect_to customer_params
     else
       render "edit"

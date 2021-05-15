@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col">
       <h2>編集</h2>
-      <%= render 'layoute/error_messages', validation: @training_menu %>
-      <%= form_with model: @training_menu, url: training_menu_path, local: true do |f| %>
+
+      <%= form_with model: [@trainer, @training_menu], local: true do |f| %>
 
       <div class="field">
         <%= f.label :training_name, "トレーニング名" %><br />

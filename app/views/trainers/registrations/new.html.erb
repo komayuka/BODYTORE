@@ -13,7 +13,7 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="field">
+  <div class="gender">
     <%= f.label :gender %><br />
     <%= f.select :gender, Trainer.genders.keys, {prompt:"選択してください"}, class: 'signup_input signup_input--gender error-form--gender' %>
   </div>
