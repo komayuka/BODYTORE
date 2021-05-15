@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     when Trainer
       trainer_path(current_trainer)
     when Customer
-      customer_path
+      customer_path(current_customer)
     end
   end
 
@@ -19,7 +19,6 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     if resource_class == Customer
       devise_parameter_sanitizer.permit(:sign_up, keys: [:customer_name, :gender, :age])
-      devise_parameter_sanitizer.permit(:sign_in, keys: [:customer_name])
     else
       devise_parameter_sanitizer.permit(:sign_up, keys:[:trainer_name, :gender])
     end

@@ -1,17 +1,15 @@
-<div class="nested-fields form-inline">
-  <div class="field">
-    <%= ff.label :trainings_name, "種目" %>
-    <%= ff.text_field :training_name %>
-  </div>
+<div class="nested-fields">
+  <td>
+     <%= f.label :trainings_name, "種目" %>
+     <%= f.text_field :training_name %>
+  </td>
+  <tr></tr>
+    <td>
+      <%= f.label :training_description, "トレーニング詳細説明" %>
+      <%= f.text_field :training_description %>
+    </td>
 
-  <div class="field">
-    <%= ff.label :training_description, "トレーニング詳細説明" %>
-    <%= ff.text_field :training_description %>
-  </div>
 
-  <div class="field">
-    <%= ff.hidden_field :training_status, {value: "未着手"} %>
-  </div>
-
-  
+  <%= f.hidden_field :training_status, {value: "未着手"} %>
+  <%= link_to_remove_association "削除", f %>
 </div>

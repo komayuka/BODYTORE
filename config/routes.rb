@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   #trainer側サイトrouting
   scope module: :trainer do
-    resources :trainers,  only: [:show, :update] do
+    resources :trainers do
       resources :training_menus
     end
     get 'trainers/profile/edit' => 'trainers#edit'
@@ -31,7 +31,7 @@ Rails.application.routes.draw do
      get 'customers/profile/edit' => 'customers#edit'
      patch 'customers/profile' => 'customers#update'
     resources :trainers, only: [:index, :show] do
-     resources :training_menus,only: [:index, :show]
+     resources :training_menus, only: [:index, :show]
      resource :favorites, only: [:create, :destroy]
     end
     end

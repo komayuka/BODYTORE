@@ -6,7 +6,7 @@ class Customer < ApplicationRecord
   has_many :training_menu
   has_many :training, through: :training_menu
   has_many :favorites, dependent: :destroy
-
+  has_many :favorited_trainers, through: :favorites, source: :trainer
 
 
   attachment :customer_image
@@ -26,5 +26,7 @@ class Customer < ApplicationRecord
 def bmi(body_weight,height)
   (body_weight / (height*0.1) ** 2 * 100).round(1)
 end
+
+
 
 end
