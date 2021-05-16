@@ -1,15 +1,14 @@
-<div class="nested-fields">
+<tr class="nested-fields">
   <td>
-     <%= f.label :trainings_name, "種目" %>
      <%= f.text_field :training_name %>
   </td>
-  <tr></tr>
-    <td>
-      <%= f.label :training_description, "トレーニング詳細説明" %>
-      <%= f.text_field :training_description %>
-    </td>
-
-
+  <td>
+     <%= f.text_field :training_description %>
+  </td>
   <%= f.hidden_field :training_status, {value: "未着手"} %>
-  <%= link_to_remove_association "削除", f %>
-</div>
+  <th></td>
+  <td>
+  <%= link_to_remove_association "", f, class: 'fas fa-trash-alt' %>
+  </td>
+</tr>
+</tbody>
