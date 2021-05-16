@@ -7,10 +7,19 @@
             登録して公開していきましょう！
        </div><br />
         <div class="row">
-          
+          <div class="col-md-6">
+            <div class="text-left">
+              <td>初めての方</td><br />
+              <td><%= link_to "新規登録", new_trainer_registration_path %></td>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="text-right">
+              <td>登録済みの方</td><br />
+              <td><%= link_to "ログイン", new_trainer_session_path %></td>
+            </div>
+          </div>
         </div>
-      <%= link_to "新規登録", new_trainer_registration_path %><br />
-           <%= link_to "ログイン", new_trainer_session_path %>
     </div>
   </div>
 </div>

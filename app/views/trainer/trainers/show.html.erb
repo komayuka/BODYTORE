@@ -3,17 +3,18 @@
     <div class="col">
       <p><%= flash[:notice] %></p>
 
-
-      <h2>マイページ</h2>
+      <h3>マイページ</h3>
       <div>
         <strong>登録情報</strong>
       </div>
-      <table>
+
         <% if current_trainer.trainer_image == nil %>
         <p><%= image_tag asset_path('default.png'), size: '120x120' %></p>
         <% else %>
         <p><%= attachment_image_tag current_trainer, :trainer_image, size: '120x120' %></p>
         <% end %>
+        <div class="col-md-6">
+          <table>
         <thead>
           <th></th>
           <tr>
@@ -33,6 +34,7 @@
           </tr>
 
         </thead>
+        </div>
       </table>
       <%= link_to "編集", trainers_profile_edit_path %>
     </div>

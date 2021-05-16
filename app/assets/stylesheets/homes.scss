@@ -2,14 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import "bootstrap";
-@import 'font-awesome-sprockets';
-@import 'font-awesome';
+
 
 .main-container {
   width: 100vw;
   height: 100vh;
-  background-image :url(gum2.jpg);
+  background-image :url(gum7.jpg);
   background-possition: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -30,9 +28,10 @@
   z-index: -1;
 }
 .text-comment {
-  font-family: 'Alegrea Sans SC', sans-serif;
   text-shadow: 0 0 10px #333;
   color: #ffffff;
+  font-famliy: 'QuintUppercaseFont';
+  font-size: 18px;
   text-align: center;
 }
 

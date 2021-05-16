@@ -18,7 +18,10 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-
+@font-face {
+  font-famliy: 'QuintUppercaseFont';
+  src: font-url('/assets/QuintUppercaseFont.otf');
+}
 
 
 // header
@@ -58,3 +61,5 @@ footer {
   color: #FFF;
   text-align: center;
 }
+
+
