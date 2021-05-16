@@ -1,11 +1,38 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.left-comment {
-  box-shadow: 0 1px 6px #000;
+
+@import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  background-image :url(gum2.jpg);
+  background-possition: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+  z-index: 0;
 }
 
-.right-comment {
-  box-shadow: 0 1px 6px #000;
+.main-container::before {
+  content: ''
+  position absolute;
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+  background: inherit;
+  filter: blur(2px);
+  z-index: -1;
+}
+.text-comment {
+  font-family: 'Alegrea Sans SC', sans-serif;
+  text-shadow: 0 0 10px #333;
+  color: #ffffff;
+  text-align: center;
 }
 

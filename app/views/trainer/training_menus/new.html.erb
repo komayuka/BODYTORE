@@ -5,32 +5,24 @@
      <h2>トレーニングメニュー新規登録</h2>
        <%= form_with model: [@trainer, @training_menu], local: true do |f| %>
 
-      <div class="field">
-        <%= f.label :training_name, "トレーニング名" %><br />
-        <%= f.text_field :training_name %>
-      </div>
+      <label class="control-label" for="">トレーニング名</label>
+        <%= f.text_field :training_name, class: 'form-control' %>
 
-      <div class="category">
-        <%= f.label :category, "カテゴリー" %><br />
-        <%= f.select :category, TrainingMenu.categories.keys, {prompt:"選択してください"}, class: 'signup_input signup_input--category error-form--category' %>
-      </div>
+      <label class="control-label" for="">カテゴリー</label><br />
+        <%= f.select :category, TrainingMenu.categories.keys, {prompt:"選択してください"}, class: 'from-control signup_input signup_input--category error-form--category' %><br />
 
-      <div class="field">
-        <%= f.label :description, "トレーニング説明" %><br />
-        <%= f.text_field :description %>
-      </div>
+      <label class="control-label" for="">トレーニング説明</label>
+        <%= f.text_field :description, class: 'form-control' %>
 
         <%= f.hidden_field :training_menu_status, {value: '未対応'} %>
 
         <!--training内容投稿（子要素）-->
       <div class="training">
         <%= f.fields_for :trainings do |training| %>
-           <%= render 'form_fields', ff: training %> <!--ffは子要素のフォーム-->
-
+           <%= render 'form_fields', ff: training %><br /> <!--ffは子要素のフォーム-->
         <% end %>
-       <div class="links">
-          <%= link_to_add_association "追加", f, :trainings %>
-       </div>
+      <div class="text-right">
+          <%= link_to_add_association "追加", f, :trainings, class: 'btn btn-default' %></div>
       </div>
 
       <p></p>

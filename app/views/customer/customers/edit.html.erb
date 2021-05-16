@@ -3,7 +3,7 @@
     <div class="col">
      <h2>登録情報編集</h2>
      <%= render 'layouts/error_messages', validation: @customer %>
-     <%= form_with model: @customer, url: customer_customers_profile_path, local: :true do |f| %>
+     <%= form_with model: [@customer,@customers], local: :true do |f| %>
 
      <div class="field">
        <%= f.label :customer_image, "画像" %><br />

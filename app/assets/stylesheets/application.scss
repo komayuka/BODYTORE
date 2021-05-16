@@ -19,8 +19,10 @@
 @import 'font-awesome';
 
 
+
+
 // header
-main {
+html {
   background-image: image-url("background1.jpg");
 }
 
@@ -33,7 +35,7 @@ header {
 }
 
 .header_logo {
-  width: 200px;
+  width: 150px;
   height: auto;
 }
 
@@ -47,7 +49,7 @@ footer {
   height: 50px;
   text-align: center;
   background-color: rgba(0, 128, 128, 0.5);
-  position: relative;
+  position: absolute;
   bottom:  0;
 }
 

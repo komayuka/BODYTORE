@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'homes#top'
+  get 'homes/trainer_top' => 'homes#trainer_top'
+  get 'homes/customer_top' => 'homes#customer_top'
 
   devise_for :trainers,  controllers: {
     sessions:      'trainers/sessions',
@@ -27,7 +29,7 @@ Rails.application.routes.draw do
 
   # customer側サイトrouting
   scope module: :customer do
-    resources :customers, only: [:show, :update] do
+    resources :customers do
      get 'customers/profile/edit' => 'customers#edit'
      patch 'customers/profile' => 'customers#update'
     resources :trainers, only: [:index, :show] do
