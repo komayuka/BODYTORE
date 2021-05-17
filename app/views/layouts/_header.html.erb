@@ -9,19 +9,19 @@
         <ul class="navbar-nav ml-auto">
           <% if customer_signed_in? %>
           <!--customerヘッダー-->
-           <li><%= link_to "マイページ", customer_path(current_customer) %></li>
-           <li><%= link_to "トレーナー探す", customer_trainers_path(current_customer) %></li>
-           <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
+           <li><%= link_to "マイページ", customer_path(current_customer), class: "nav-link text-light fas fa-user-circle" %></li>
+           <li><%= link_to "トレーナー探す", customer_trainers_path, class: "nav-link text-light fas fa-dumbbell" %></li>
+
+           <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: "nav-link text-light fas fa-sign-out-alt" %></li>
 
            <% elsif trainer_signed_in? %>
            <!--trainerヘッダー-->
-           <li><%= link_to "マイページ", trainer_path(current_trainer) %></li>
-           <li><%= link_to "トレーニングメニュー", trainer_training_menus_path(current_trainer) %></li>
-           <li><%= link_to "ログアウト", destroy_trainer_session_path, method: :delete %></li>
-           <% else %>
+           <li><%= link_to "マイページ", trainer_path(current_trainer), class: "nav-link text-light fas fa-user-circle" %></li>
+           <li><%= link_to "トレーニングメニュー", trainer_training_menus_path(current_trainer), class: "nav-link text-light fas fa-dumbbell" %></li>
+           <li><%= link_to "ログアウト", destroy_trainer_session_path, method: :delete, class: "nav-link text-light fas fa-sign-out-alt" %></li>
 
-           <li><%= link_to 'home', root_path %></li>
-
+          <% else %>
+          <li><%= link_to "商品を探す", rakuten_rakuten_search_path %></li>
 
            <% end %>
         </ul>

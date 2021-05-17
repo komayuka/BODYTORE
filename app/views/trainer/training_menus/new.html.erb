@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
+      <%= render 'layouts/error_messages', validation: @training_menu %>
 
      <h3>トレーニングメニュー新規登録</h3>
        <%= form_with model: [@trainer, @training_menu], local: true do |f| %>
@@ -22,7 +23,8 @@
            <%= render 'form_fields', ff: training %><br /> <!--ffは子要素のフォーム-->
         <% end %>
       <div class="text-right">
-          <%= link_to_add_association "追加", f, :trainings, class: 'btn btn-default' %></div>
+          <%= link_to_add_association "追加", f, :trainings, class: 'btn btn-default' %>
+      </div>
       </div>
 
       <p></p>

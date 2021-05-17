@@ -4,11 +4,13 @@
 
       <h3>オススメトレーナー</h3>
       <% @trainers.each do |trainer| %>
-      <%= attachment_image_tag trainer, :trainer_image, size: "150x150", class:"attachment trainer trainer_image fallback" %>
+        <% if trainer.trainer_image == nil %>
+           <p><%= image_tag asset_path('default.png'), size: '120x120' %></p>
+          <% else %>
+           <p><%= attachment_image_tag trainer, :trainer_image, size: '120x120' %></p>
+          <% end %>
 
-      <p><%= link_to customer_trainer_path(trainer.id) do %>
-         <%= trainer.trainer_name %>
-         <% end %>
+        <p><%= link_to trainer.trainer_name,'/customer/trainers/'+"#{trainer.id}" %></p>
          <% trainer.training_menu.each do |a| %>
          <%= link_to trainer_training_menus_path(trainer.id) do %>
          <%= a.category %>

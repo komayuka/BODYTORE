@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'homes#top'
   get 'homes/trainer_top' => 'homes#trainer_top'
   get 'homes/customer_top' => 'homes#customer_top'
+  get 'rakuten/rakuten_search' => 'rakuten#search'
 
   devise_for :trainers,  controllers: {
     sessions:      'trainers/sessions',
@@ -31,6 +32,7 @@ Rails.application.routes.draw do
   scope module: :customer do
     get 'customer/trainers' => 'trainers#index'
     get 'customer/trainers/:id' => 'trainers#show'
+    get 'customer/trainers/:trainer_id/training_menus/:id' => 'training_menus#show'
     resources :customers do
      get 'customers/profile/edit' => 'customers#edit'
      patch 'customers/profile' => 'customers#update'
