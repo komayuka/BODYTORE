@@ -4,55 +4,40 @@
 　　　<p><%= flash[:notice] %></p>
 
       <h3>マイページ</h3>
-      <div>
+      <div class="row">
+        <div class="col-lg-4">
         <strong>登録情報</strong>
-
+         <% if current_customer.customer_image == nil %>
+           <p><%= image_tag asset_path('default.png'), size: '120x120' %></p>
+         <% else %>
+           <p><%= attachment_image_tag current_customer, :customer_image, size: '120x120' %></p>
+         <% end  %>
       </div>
-      <table>
-        <% if current_customer.customer_image == nil %>
-        <p><%= image_tag asset_path('no_image.png'), size: '120x120' %></p>
-        <% else %>
-        <p><%= attachment_image_tag current_customer, :customer_image, size: '120x120' %></p>
-        <% end  %>
 
-        <thead>
-            <th></th>
-            <tr>
-              <th>名前</th>
-              <td><%= current_customer.customer_name %></td>
-            </tr>
-            <tr>
-              <th>自己紹介</th>
-              <td><%= current_customer.customer_introduction %></td>
-            </tr>
-            <tr>
-              <th>年齢</th>
-              <td><%= current_customer.age %></td>
-            </tr>
-            <tr>
-              <th>性別</th>
-              <td><%= current_customer.gender %></td>
-            </tr>
-            <tr>
-              <th>体重</th>
-              <td><%= current_customer.body_weight %></td>
-            </tr>
-            <tr>
-              <th>身長</th>
-              <td><%= current_customer.height %></td>
-            </tr>
-            <tr>
-              <th>BMI</th>
-              <% if current_customer.body_weight.present? && current_customer.height.present? %>
-              <td><%= current_customer.bmi(current_customer.body_weight,current_customer.height) %></td>
-              <% else %>
-              <td>身長と体重を入力してください。</td>
-              <% end %>
-            </tr>
-            <th></th>
+      <div class="col-lg-3">
+        <p>名前</p>
+        <p>自己紹介</p>
+        <p>年齢</p>
+        <p>性別</p>
+        <p>体重</p>
+        <p>身長</p>
+        <p>BMI</p>
+      </div>
 
-        </thead>
-      </table>
+      <div class="col-lg-5">
+        <p><%= current_customer.customer_name %></p>
+        <p><%= current_customer.customer_introduction %></p>
+        <p><%= current_customer.age %> 歳</p>
+        <p><%= current_customer.gender %></p>
+        <p><%= current_customer.body_weight %> kg</p>
+        <p><%= current_customer.height %> cm</p>
+        <p><% if current_customer.body_weight.present? && current_customer.height.present? %>
+            <p><%= current_customer.bmi(current_customer.body_weight,current_customer.height) %></p>
+           <% else %>
+            <p>身長と体重を入力してください。</p>
+           <% end %></p>
+      </div>
+      </div>
        <%= link_to "編集", customer_customers_profile_edit_path(current_customer) %>
     </div>
   </div>

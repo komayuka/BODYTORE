@@ -1,8 +1,12 @@
 <div class="container">
   <div class="row">
-    <div class="col">
-      <h3>トレーニングメニュー詳細</h3>
-      <table>
+    <div class="mt-5">
+     <div class="col">
+       <h3>トレーニングメニュー詳細</h3>
+
+     </div>
+      <div class="col">
+       <table class="table">
         <thead>
           <tr>
             <td>トレーニング名</td>
@@ -13,11 +17,14 @@
         </thead>
 
         <tbody>
-          <th><%= @training_menu.training_name %></th>
-          <th><%= @training_menu.category %></th>
-          <th><%= @training_menu.description %></th>
+          <tr>
+            <td><%= @training_menu.training_name %></td>
+            <td><%= @training_menu.category %></td>
+            <td><%= @training_menu.description %></td>
+          </tr>
         </tbody>
-      </table>
+       </table>
+      </div>
       <%= link_to '編集', edit_trainer_training_menu_path %>
 
     </div>

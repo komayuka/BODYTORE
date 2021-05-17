@@ -29,6 +29,8 @@ Rails.application.routes.draw do
 
   # customer側サイトrouting
   scope module: :customer do
+    get 'customer/trainers' => 'trainers#index'
+    get 'customer/trainers/:id' => 'trainers#show'
     resources :customers do
      get 'customers/profile/edit' => 'customers#edit'
      patch 'customers/profile' => 'customers#update'

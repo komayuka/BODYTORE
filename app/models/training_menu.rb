@@ -1,4 +1,6 @@
 class TrainingMenu < ApplicationRecord
+  validates :training_name, length: { maximum: 50 }
+
   belongs_to :trainer
   has_many :trainings
   #別のモデルを同じフォームで保存/trainings単体削除
