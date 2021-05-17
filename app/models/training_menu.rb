@@ -7,6 +7,7 @@ class TrainingMenu < ApplicationRecord
   accepts_nested_attributes_for :trainings, allow_destroy: true
   #optional=>nilでも可
   belongs_to :customer, optional: true
+  accepts_attachments_for :trainings, attachment: :training_image
 
   enum category: {
     "ヨガ": 0,
