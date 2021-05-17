@@ -14,16 +14,24 @@
            <p><%= attachment_image_tag current_trainer, :trainer_image, size: '120x120' %></p>
           <% end %>
         </div>
-        <div class="col-lg-3">
-           <p>名前</p>
-           <p>自己紹介</p>
-           <p>性別</p>
-        </div>
-        <div class="col-lg-5">
-           <p><%= current_trainer.trainer_name %></p>
-           <p><%= current_trainer.trainer_introduction %></p>
-           <p><%= current_trainer.gender %></p>
-        </div>
+        <div class="col-lg-8">
+         <table class="table">
+          <thead>
+           <tr>
+            <th>名前</th>
+            <td><%= current_trainer.trainer_name %></td>
+           </tr>
+           <tr>
+            <th>自己紹介</th>
+            <td><%= current_trainer.trainer_introduction %></td>
+           </tr>
+           <tr>
+            <th>性別</th>
+            <td><%= current_trainer.gender %></td>
+           </tr>
+          </thead>
+         </table>
+
       </div>
       <%= link_to "編集", trainers_profile_edit_path, class: "text-center" %>
     </div>
