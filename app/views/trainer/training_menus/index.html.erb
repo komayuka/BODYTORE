@@ -24,7 +24,7 @@
         <% @training_menus.each do |training_menu| %>
         <tr>
           <td><%= training_menu.id %></td>
-          <td><%= link_to trainer_training_menus_path(training_menu.id) do %>
+          <td><%= link_to trainer_training_menu_path(@trainer, training_menu.id) do %>
               <%= training_menu.training_name %>
               <% end %>
           </td>
