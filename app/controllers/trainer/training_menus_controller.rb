@@ -21,8 +21,11 @@ class Trainer::TrainingMenusController < ApplicationController
     @training_menu = TrainingMenu.new(training_menu_params)
     #トレーニングメニューにトレーナーidを関連付け
     @training_menu.trainer_id = current_trainer.id
-    @training_menu.save
-    redirect_to trainer_training_menus_path(@trainer)
+    if @training_menu.save
+      redirect_to trainer_training_menus_path(@trainer)
+    else
+      render "index"
+    end
   end
 
   def edit

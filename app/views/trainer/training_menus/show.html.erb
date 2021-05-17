@@ -9,13 +9,11 @@
        <table class="table">
         <thead>
           <tr>
-            <td>トレーニング名</td>
-            <td>カテゴリー</td>
-            <td>トレーニング説明</td>
-            <td></td>
+            <th>トレーニング名</th>
+            <th>カテゴリー</th>
+            <th>トレーニング説明</th>
           </tr>
         </thead>
-
         <tbody>
           <tr>
             <td><%= @training_menu.training_name %></td>
@@ -23,10 +21,26 @@
             <td><%= @training_menu.description %></td>
           </tr>
         </tbody>
+     </div>
+       <div class="col">
+         <thead>
+          <tr>
+            <th>トレーニング種目</th>
+            <th>トレーニング詳細説明</th>
+            <th>トレーニング画像</th>
+            </tr>
+             <!--子要素-->
+             <% @training_menu.trainings.each do |training| %>
+          <tr>
+            <td><%= training.training_name %></td>
+            <td><%= training.training_description %></td>
+            <td><%= training.training_image %></td>
+             <% end %>
+          </tr>
+         </thead>
        </table>
-      </div>
+       </div>
       <%= link_to '編集', edit_trainer_training_menu_path %>
-
     </div>
   </div>
 </div>

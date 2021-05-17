@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'homes#top'
   get 'homes/trainer_top' => 'homes#trainer_top'
   get 'homes/customer_top' => 'homes#customer_top'
+  get 'rakuten/rakuten_search' => 'rakuten#search'
 
   devise_for :trainers,  controllers: {
     sessions:      'trainers/sessions',
