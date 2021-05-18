@@ -6,7 +6,6 @@ class Trainer < ApplicationRecord
   has_many :trainings
   has_many :training_menus
   has_many :favorites, dependent: :destroy
-  has_many :favorited_customer, through: :favorites, source: :customer
 
   attachment :trainer_image
 
@@ -21,8 +20,8 @@ class Trainer < ApplicationRecord
     "女性": 1,
   }
 
-  def favorited_by?(current_customer)
-    favorites.where(current_customer).exists?
+  def favorited_by?(customer)
+    favorites.where(customer_id: customer.id).exists?
   end
 
 end

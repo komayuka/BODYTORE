@@ -11,10 +11,8 @@
           <% end %>
 
         <p><%= link_to trainer.trainer_name,'/customer/trainers/'+"#{trainer.id}" %></p>
-         <% trainer.training_menu.each do |a| %>
-         <%= link_to trainer_training_menus_path(trainer.id) do %>
+         <% trainer.training_menus[0..2].each do |a| %>
          <%= a.category %>
-         <% end %>
          <% end %>
 
 

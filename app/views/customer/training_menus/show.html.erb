@@ -1,1 +1,34 @@
-<%= @training_menu.id %>
+<div class="container">
+ <div class="mt-5"></div>
+  <div class="row">
+    <div clss="col">
+     <h3>トレーニングメニュー詳細</h3>
+     　<p>頑張って実行してみましょう！</p>
+        <table class="table">
+         <thead>
+          <tr>
+            <th>トレーニング種目</th>
+            <th>トレーニング詳細説明</th>
+            <th>参考画像</th>
+          </tr>
+         </thead>
+         <tbody>
+          <% @training_menu.trainings.each do |training| %>
+          <tr>
+            <td><%= training.training_name %></td>
+            <td><%= training.training_description %></td>
+            <td>
+                <% if training.training_image == nil %>
+                 <%= image_tag asset_path('default.png'), size: '120x120' %>
+                <% else %>
+                 <%= attachment_image_tag training, :training_image, size: '120x120' %>
+                <% end %>
+            </td>
+         <% end %>
+          </tr>
+         </tbody>
+       </table>
+    </div>
+  </div>
+ </div>
+</div>

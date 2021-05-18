@@ -33,12 +33,13 @@ Rails.application.routes.draw do
     get 'customer/trainers' => 'trainers#index'
     get 'customer/trainers/:id' => 'trainers#show'
     get 'customer/trainers/:trainer_id/training_menus/:id' => 'training_menus#show'
+    post 'customers/trainers/:trainer_id/favorites' => 'favorites#create', as: 'favorites'
+    delete 'customers/trainers/:trainer_id/favorites' => 'favorites#destroy'
     resources :customers do
      get 'customers/profile/edit' => 'customers#edit'
      patch 'customers/profile' => 'customers#update'
     resources :trainers, only: [:index, :show] do
      resources :training_menus, only: [:index, :show]
-     resource :favorites, only: [:create, :destroy]
     end
     end
   end
