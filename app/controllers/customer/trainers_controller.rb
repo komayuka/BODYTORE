@@ -8,7 +8,7 @@ class Customer::TrainersController < ApplicationController
   def show
     @trainer = Trainer.find(params[:id])
     @training_menus = @trainer.training_menus
-   
+    @favorites = Favorite.new
   end
 
 

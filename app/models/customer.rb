@@ -5,8 +5,8 @@ class Customer < ApplicationRecord
   validates :body_weight, numericality: true
   validates :height, numericality: true
 
-  has_many :training_menu
-  has_many :training, through: :training_menu
+  has_many :training_menus
+  has_many :trainings, through: :training_menu
   has_many :favorites, dependent: :destroy
   has_many :favorited_trainers, through: :favorites, source: :trainer
 

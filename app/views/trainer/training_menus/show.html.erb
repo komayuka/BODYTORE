@@ -31,15 +31,15 @@
             </tr>
              <!--子要素-->
              <% @training_menu.trainings.each do |training| %>
-          <tr>
-            <td><%= training.training_name %></td>
-            <td><%= training.training_description %></td>
+          　<tr>
+             <td><%= training.training_name %></td>
+             <td><%= training.training_description %></td>
              <td><% if training.training_image == nil %>
                   <%= image_tag asset_path('default.png'), size: '60x60' %>
                  <% else %>
-                  <%= attachment_image_tag training.training_image, :trainings, size: '60x60' %>
+                  <%= attachment_image_tag training, :training_image, size: '60x60' %>
                  <% end %>
-
+             </td>
              <% end %>
           </tr>
          </thead>
