@@ -10,7 +10,7 @@
           <% end %>
            <!--いいね機能-->
           <div id="favorites_buttons_<%= @trainer.id %>">
-            <%= render partial: 'customer/favorites/favorite_btn', locals: { trainer: @trainer} %>
+            <%= render partial: 'customerfavorites/favorite_btn', locals: { trainer: @trainer} %>
           </div>
            <p><%= @trainer.trainer_name %></p>
            <p><%= @trainer.trainer_introduction %></p>

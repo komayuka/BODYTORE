@@ -5,8 +5,8 @@
      <th>カテゴリ</th>
      <th>トレーニング説明</th>
    </tr>
-  </thead>
-  <tbody>
+ </thead>
+ <tbody>
     <% menus.each do |training_menu| %>
    <tr>
      <td><%= link_to training_menu.training_name, '/customer/trainers/'+"#{training_menu.trainer_id}"+'/training_menus/'+"#{training_menu.id}" %></td>
@@ -14,5 +14,5 @@
      <td><%= training_menu.description %></td>
    </tr>
    <% end %>
-  </tbody>
+ </tbody>
 </table>
