@@ -3,9 +3,9 @@
 <%= text_field_tag 'keyword', params[:keyword] %>
 <%= submit_tag "検索" %>
 <% end %>
-<h3>自宅でトレーニングする際に必要となるものを検索してみましょう。<br />
-    例:ヨガマット,腹筋ローラー,ステップ台等</h3>
-<table>
+<p>自宅でトレーニングする際に必要となるものを検索してみましょう。<br />
+    例: ヨガマット,腹筋ローラー,ステップ台等</p>
+<table class="table">
   <thead>
     <tr>
       <th>商品名</th>
@@ -17,9 +17,9 @@
     <% if @items.present? %>
      <% @items.each do |item| %>
      <tr>
-       <td><%= link_to item.name, "#{item.url}" %></td>
+       <td><%= image_tag item["smallImageUrls"][0] %></td>
        <td align="right"><%= number_with_delimiter(item.price) %>円</td>
-       <td><%= image_tag item["smallImageUrls"][0]["imageUrl"] %></td>
+       <td><%= link_to item.name, "#{item.url}" %></td>
      </tr>
      <% end %>
     <% end %>
