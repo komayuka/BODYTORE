@@ -3,25 +3,19 @@
     <div class="col">
 
       <h3>オススメトレーナー</h3>
-      <% @trainers.each do |trainer| %>
+       <% @trainers.each do |trainer| %>
         <% if trainer.trainer_image == nil %>
            <p><%= image_tag asset_path('default.png'), size: '120x120' %></p>
           <% else %>
            <p><%= attachment_image_tag trainer, :trainer_image, size: '120x120' %></p>
-          <% end %>
+        <% end %>
 
         <p><%= link_to trainer.trainer_name,'/customer/trainers/'+"#{trainer.id}" %></p>
-         <% trainer.training_menus[0..2].each do |a| %>
-         <%= a.category %>
-         <% end %>
-
-
-      </p>
-
-
+            <% trainer.training_menus[0..2].each do |a| %>
+            <%= a.category %>
+           <% end %>
+        </p>
       <% end %>
-
-
     </div>
   </div>
 </div>

@@ -8,9 +8,9 @@
 <table class="table">
   <thead>
     <tr>
-      <th>商品名</th>
-      <th>価格</th>
       <th>画像</th>
+      <th>価格</th>
+      <th>商品名</th>
     </tr>
   </thead>
   <tbody>
@@ -22,6 +22,9 @@
        <td><%= link_to item.name, "#{item.url}" %></td>
      </tr>
      <% end %>
+    <% end %>
+    <% if @items.present? %>
+    <%= paginate @items, class: "paginate" %>
     <% end %>
   </tbody>
 </table>

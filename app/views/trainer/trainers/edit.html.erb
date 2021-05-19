@@ -3,8 +3,8 @@
     <div class="col">
 
       <h3>登録情報編集</h3>
-      <%= render 'layouts/error_messages', validation: @trainer %>
-      <%= form_with model: @trainer, url: trainers_profile_path, local: :true do |f| %>
+       <%= render 'layouts/error_messages', validation: @trainer %>
+       <%= form_with model: @trainer, url: trainers_profile_path, local: :true do |f| %>
 
       <div class="field">
         <%= f.label :trainer_image, "画像" %><br />
@@ -21,8 +21,8 @@
         <%= f.text_area :trainer_introduction %>
       </div>
      <br />
-     <%= f.submit "更新" %>
-     <% end %>
+      <%= f.submit "更新" %>
+      <% end %>
     </div>
   </div>
 </div>

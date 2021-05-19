@@ -2,11 +2,8 @@
     <%= link_to favorites_path(trainer), method: :delete, remote: true do %>
      ♥<%= trainer.favorites.count %> いいね
     <% end %>
-
     <% else %>
-
     <%= link_to favorites_path(trainer), method: :post, remote: true do %>
      ♡<%= trainer.favorites.count %> いいね
     <% end %>
-
 <% end %>
