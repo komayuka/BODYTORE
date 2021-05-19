@@ -14,19 +14,17 @@
     </tr>
   </thead>
   <tbody>
+    <% if @items.present? %>
      <% @items.each do |item| %>
      <tr>
-       <td>
-        <% if item["smallImageUrls"][0] == nil %>
-         <%= image_tag asset_path('default.png'), size: '64x64' %></p>
-        <% else %>
-         <%= image_tag item["smallImageUrls"][0] %>
-        <% end %>
-        </td>
+       <td><%= image_tag item["smallImageUrls"][0] %></td>
        <td align="right"><%= number_with_delimiter(item.price) %>円</td>
        <td><%= link_to item.name, "#{item.url}" %></td>
      </tr>
-
+     <% end %>
+    <% end %>
+    <% if @items.present? %>
+    <%= paginate @items, class: "paginate" %>
     <% end %>
   </tbody>
 </table>

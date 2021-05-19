@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>お気に入り一覧</h3>
+      <% current_customer.favorited_trainers.each do |trainer| %>
+          <% if trainer.trainer_image == nil %>
+          <div id="favorites_buttons_<%= trainer.id %>">
+           <%= render partial: 'customer/favorites/favorite_btn', locals: { trainer: trainer} %>
+           </div>
+           <p><%= image_tag asset_path('default.png'), size: '120x120' %></p>
+          <% else %>
+           <p><%= attachment_image_tag trainer, :trainer_image, size: '120x120' %></p>
+          <% end %>
+        <%= link_to trainer.trainer_name,'/customer/trainers/'+"#{trainer.id}" %>
+      <% end %>
+    </div>
+  </div>
+</div>

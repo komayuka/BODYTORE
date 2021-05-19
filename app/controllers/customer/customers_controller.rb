@@ -8,6 +8,7 @@ class Customer::CustomersController < ApplicationController
 
   def edit
     @customer = current_customer
+
   end
 
   def update
@@ -19,6 +20,12 @@ class Customer::CustomersController < ApplicationController
       render "edit"
     end
   end
+
+  def favories
+    @favorited_trainer = current_customer.favorited_trainers
+  end
+
+
 
   private
 

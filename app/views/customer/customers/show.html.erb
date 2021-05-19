@@ -11,7 +11,9 @@
             <p><%= image_tag asset_path('default.png'), size: '120x120' %></p>
            <% else %>
             <p><%= attachment_image_tag current_customer, :customer_image, size: '120x120' %></p>
-           <% end  %>
+           <% end %>
+           <%= link_to "お気に入りしたトレーナー", favorites_customers_path %>
+
          </div>
 
          <div class="col-lg-8">

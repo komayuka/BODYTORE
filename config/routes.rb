@@ -38,6 +38,7 @@ Rails.application.routes.draw do
     resources :customers do
      get 'customers/profile/edit' => 'customers#edit'
      patch 'customers/profile' => 'customers#update'
+     get :favorites, on: :collection
     resources :trainers, only: [:index, :show] do
      resources :training_menus, only: [:index, :show]
     end
