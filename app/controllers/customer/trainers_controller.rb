@@ -2,7 +2,8 @@ class Customer::TrainersController < ApplicationController
   before_action :authenticate_customer!
 
   def index
-    @trainers = Trainer.all
+    @trainers = Trainer.all.page(params[:page]).per(10)
+    @favorites_rank = Trainer.joins(:favorites).group(:trainer_id).order('count(trainer_id)desc')
   end
 
   def show

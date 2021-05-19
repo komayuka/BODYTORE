@@ -1,21 +1,27 @@
 <div class="container">
-  <div class="row">
-    <div class="col">
-
-      <h3>オススメトレーナー</h3>
-       <% @trainers.each do |trainer| %>
-        <% if trainer.trainer_image == nil %>
-           <p><%= image_tag asset_path('default.png'), size: '120x120' %></p>
-          <% else %>
-           <p><%= attachment_image_tag trainer, :trainer_image, size: '120x120' %></p>
-        <% end %>
-
-        <p><%= link_to trainer.trainer_name,'/customer/trainers/'+"#{trainer.id}" %></p>
-            <% trainer.training_menus[0..2].each do |a| %>
-            <%= a.category %>
-           <% end %>
-        </p>
-      <% end %>
+  <h3>トレーナー 一覧</h3>
+  (全<%= @trainers.count %>件)
+    <div class="row">
+     <div class="col-1"></div>
+      <div class="col-md-10 mx-auto">
+        <div class="list-wrap">
+          <% @trainers.each do |trainer| %>
+           <div class="list-box">
+            <% if trainer.trainer_image == nil %>
+             <%= image_tag asset_path('default.png'), size: '150x150' %>
+            <% else %>
+             <%= attachment_image_tag trainer, :trainer_image, size: '150x150' %>
+            <% end %>
+            <br />
+             <div><h5><%= link_to trainer.trainer_name,'/customer/trainers/'+"#{trainer.id}" %></h5></div><br />
+              <% trainer.training_menus[0..2].each do |a| %>
+               <span><%= a.category %></span>
+              <% end %>
+           </div>
+         <% end %>
+        </div>
+       <%= paginate @trainers %>
+      </div>
+     <div class="col-md-1"></div>
     </div>
-  </div>
 </div>

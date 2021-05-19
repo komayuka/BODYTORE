@@ -1,18 +1,24 @@
 <div class="container">
+ <h3>お気に入り一覧</h3>
   <div class="row">
-    <div class="col">
-      <h3>お気に入り一覧</h3>
-      <% current_customer.favorited_trainers.each do |trainer| %>
+   <div class="col-1"></div>
+    <div class="col-md-10 mx-auto">
+     <div class="list-wrap">
+       <% current_customer.favorited_trainers.each do |trainer| %>
+        <div class="list-box">
           <% if trainer.trainer_image == nil %>
+           <%= image_tag asset_path('default.png'), size: '120x120' %>
+          <% else %>
+           <%= attachment_image_tag trainer, :trainer_image, size: '120x120' %>
+          <% end %>
           <div id="favorites_buttons_<%= trainer.id %>">
            <%= render partial: 'customer/favorites/favorite_btn', locals: { trainer: trainer} %>
-           </div>
-           <p><%= image_tag asset_path('default.png'), size: '120x120' %></p>
-          <% else %>
-           <p><%= attachment_image_tag trainer, :trainer_image, size: '120x120' %></p>
-          <% end %>
-        <%= link_to trainer.trainer_name,'/customer/trainers/'+"#{trainer.id}" %>
-      <% end %>
+          </div>
+          <%= link_to trainer.trainer_name,'/customer/trainers/'+"#{trainer.id}" %>
+        </div>
+         <% end %>
+     </div>
     </div>
+
   </div>
 </div>
