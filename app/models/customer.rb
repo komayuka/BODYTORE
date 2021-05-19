@@ -2,8 +2,7 @@ class Customer < ApplicationRecord
   validates :customer_name, uniqueness: true, length: { in: 2..20 }
   validates :customer_introduction, length: { maximum: 50 }
   validates :age, numericality: true
-  validates :body_weight, numericality: true
-  validates :height, numericality: true
+
 
   has_many :training_menus
   has_many :trainings, through: :training_menu
