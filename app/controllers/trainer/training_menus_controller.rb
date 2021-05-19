@@ -11,6 +11,7 @@ class Trainer::TrainingMenusController < ApplicationController
   def index
     @training_menu = TrainingMenu.new
     @training_menus = TrainingMenu.all
+    @training_menus = TrainingMenu.page(params[:page]).per(8)
   end
 
   def show

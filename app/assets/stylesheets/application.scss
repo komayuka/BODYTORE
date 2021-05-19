@@ -24,10 +24,27 @@
 }
 
 
-// header
-html {
-  background-image: image-url("background1.jpg");
+// 全般
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+   background-color: #f0fff0;
+}
+
+// login
+.login-box {
+  margin: 4%;
+  padding: 8% 15%;
+  border-radius: 6px;
+
+}
+
+// header
+
 
 header {
   background-image: image-url("header3.jpg");
@@ -46,6 +63,21 @@ a {
   color: #808080;
 }
 
+// kaminari
+.pagination>li>a {
+  border: none;
+  color: #696969;
+}
+
+.pagination>.active>a {
+  background: #93c9ff;
+  border-radius: 15px;
+}
+
+.pagination>li>a:hover {
+  border-radius: 15px;
+}
+
 // footer
 footer {
   width: 100%;
@@ -53,7 +85,7 @@ footer {
   text-align: center;
   background-color: rgba(0, 128, 128, 0.5);
   position: absolute;
-  bottom:  0;
+  bottom: 0;
 }
 
 .footer-text {

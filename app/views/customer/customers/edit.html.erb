@@ -21,18 +21,18 @@
      </div>
 
      <div class="field">
-       <%= f.label :age, "年齢" %><br />
+       <%= f.label :age, "年齢" %>(半角数字)<br />
        <%= f.text_field :age %>
      </div>
 
      <div class="field">
-       <%= f.label :body_weight, "体重" %><br />
-       <%= f.text_field :body_weight %>kg
+       <%= f.label :body_weight, "体重" %>(半角数字/少数点なし)<br />
+       <%= f.text_field :body_weight %> kg
      </div>
 
      <div class="field">
-       <%= f.label :height, "身長" %><br />
-       <%= f.text_field :height %>cm
+       <%= f.label :height, "身長" %>(半角数時/小数点なし)<br />
+       <%= f.text_field :height %> cm
      </div><br />
 
       <%= f.submit '更新' %>
