@@ -3,13 +3,16 @@ class Customer::TrainersController < ApplicationController
 
   def index
     @trainers = Trainer.all.page(params[:page]).per(10)
-    @favorites_rank = Trainer.joins(:favorites).group(:trainer_id).order('count(trainer_id)desc')
   end
 
   def show
     @trainer = Trainer.find(params[:id])
     @training_menus = @trainer.training_menus
     @favorites = Favorite.new
+  end
+
+  def favorites
+    @favorites_rank = Trainer.joins(:favorites).group(:trainer_id).order('count(trainer_id)desc')
   end
 
 

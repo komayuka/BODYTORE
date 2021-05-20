@@ -27,6 +27,7 @@
   filter: blur(2px);
   z-index: -1;
 }
+
 .text-comment {
   text-shadow: 0 0 10px #333;
   color: #ffffff;
@@ -35,3 +36,77 @@
   text-align: center;
 }
 
+// 画像スライド
+#box{
+  height: 400px;
+  width: 80%;
+  margin-left: 120px;
+}
+
+.image1 {
+  background-image: image-url('weight.jpg');
+}
+
+.image2 {
+  background-image: image-url('dambbell.jpg');
+}
+
+.image3 {
+  background-image: image-url('food.jpg');
+}
+
+.image4 {
+  background-image: image-url('gum5.jpg');
+}
+
+.image5 {
+  background-image: image-url('trainer1.jpg');
+}
+
+.image6 {
+  background-image: image-url('gum2.jpg');
+}
+
+
+//linkボタン
+
+.btn-border {
+  display: inline-block;
+  width: 180px;
+  height:50px;
+  text-align: center;
+  background-color: #dcdcdc;
+  font-size: 16px;
+  line-height: 52px;
+  color: #FFF;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #dcdcdc;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.btn-border:after{
+  width: 100%;
+  height: 0;
+  content:"";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background : #FFF;
+  opacity: 0;
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  transition: .2s;
+  z-index: -1;
+}
+.btn-border:hover{
+  color: #dcdcdc;
+}
+.btn-border:hover:after{
+  height: 240%;
+  opacity: 1;
+}
+.btn-border:active:after{
+  height: 340%;
+  opacity: 1;
+}

@@ -1,6 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col">
+      <div id="box">
+        <div id="images">
+          <div class="image5"></div>
+          <div class="image6"></div>
+          <div class="image2"></div>
+          <div class="image4"></div>
+        </div>
+      </div><br />
       <div class="text-center">
             会員の方に向けて、トレーニング情報を提供しませんか？<br />
             カテゴリー別に分けて、得意な分野のトレーニングを<br />
@@ -9,14 +17,14 @@
         <div class="row">
           <div class="col-md-6">
             <div class="text-left">
-              <td>初めての方</td><br />
-              <td><%= link_to "新規登録", new_trainer_registration_path %></td>
+              <td>初めての方はこちら</td><br />
+              <div class="btn-border"><%= link_to "新規登録", new_trainer_registration_path %></div>
             </div>
           </div>
           <div class="col-md-6">
             <div class="text-right">
-              <td>登録済みの方</td><br />
-              <td><%= link_to "ログイン", new_trainer_session_path %></td>
+              <td>登録済みの方はこちら</td><br />
+              <div class="btn-border"><%= link_to "ログイン", new_trainer_session_path %></div>
             </div>
           </div>
         </div>

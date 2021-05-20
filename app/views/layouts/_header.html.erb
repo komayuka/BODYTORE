@@ -11,7 +11,6 @@
           <!--customerヘッダー-->
            <li><%= link_to " マイページ", customer_path(current_customer), class: "nav-link text-light fas fa-user-circle" %></li>
            <li><%= link_to " トレーナー探す", customer_trainers_path, class: "nav-link text-light fas fa-dumbbell" %></li>
-
            <li><%= link_to " ログアウト", destroy_customer_session_path, method: :delete, class: "nav-link text-light fas fa-sign-out-alt" %></li>
 
            <% elsif trainer_signed_in? %>
@@ -21,7 +20,8 @@
            <li><%= link_to " ログアウト", destroy_trainer_session_path, method: :delete, class: "nav-link text-light fas fa-sign-out-alt" %></li>
 
           <% else %>
-          <li><%= link_to " 商品を探す", rakuten_rakuten_search_path, class: "nav-link text-light fas fa-cart-arrow-down" %></li>
+          <!--home画面ヘッダー-->
+          <li><%= link_to " 商品を検索", rakuten_rakuten_search_path, class: "nav-link text-light fas fa-cart-arrow-down" %></li>
 
            <% end %>
         </ul>
