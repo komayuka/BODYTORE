@@ -22,7 +22,7 @@ class Customer::CustomersController < ApplicationController
   end
 
   def favories
-    @favorited_trainer = current_customer.favorited_trainers.page(params[:page]).per(10)
+    @favorited_trainer = current_customer.favorited_trainers
   end
 
 
