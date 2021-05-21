@@ -1,0 +1,31 @@
+// Place all the styles related to the customer::diarys controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.diaries{
+  width:80%;
+  height:100%;
+  margin:120px auto;
+}
+
+.simple-calendar {
+ .day {}
+ .wday-0 {}
+ .wday-1 {}
+ .wday-2 {}
+ .wday-3 {}
+ .wday-4 {}
+ .wday-5 {}
+ .wday-6 {}
+ .today {}
+ .past {}
+ .future {}
+ .start-date {}
+ .prev-month {}
+ .next-month { }
+ .current-month {}
+ .has-events {
+   background: #98fb98;
+ }
+}
