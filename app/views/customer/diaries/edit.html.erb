@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col">
+      <h3>投稿編集</h3>
 
-
-      <%= form_with model: @diary, url: customer_diaries_path(@customer), local: true do |f| %>
+       <%= form_with model: [@customer, @diary], local: true do |f| %>
 
        <label class="control-label" for="">タイトル</label>
          <%= f.text_field :title, class: 'form-control' %>
@@ -11,16 +11,16 @@
        <label class="control-label" for="">日付</label>
          <%= f.date_field :start_time, class: 'form-control' %>
 
-       <label class="cotrol-label" for="">内容</label>
+       <label class="control-label" for="">内容</label>
          <%= f.text_area :content, class: 'form-control' %>
 
+
        <label class="control-label" for="">体重(kg)</label>
-         <%= f.text_field :weight, class: 'from-control' %>
+         <%= f.text_field :weight, class: 'form-control' %>
 
 
-       <%= f.submit "登録", class: "btn-default btn-red" %>
+       <%= f.submit "更新", class: "btn-default btn-red" %>
       <% end %>
-
     </div>
   </div>
 </div>

@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>カレンダー投稿詳細</h3>
+      <p><%= flash[:notice] %></p>
+     <table class="table">
+       <thead>
+         <tr>
+           <th>タイトル</th>
+           <th>日付</th>
+           <th>内容</th>
+           <th>体重</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td><%= @diary.title %></td>
+           <td><%= @diary.start_time %></td>
+           <td><%= @diary.content %></td>
+           <td><%= @diary.weight %> kg</td>
+         </tr>
+       </tbody>
+     </table>
+     <%= link_to "編集", edit_customer_diary_path(@customer) %>
+     <%= link_to "削除", customer_diary_path, method: :delete, data: {confirm: "削除しますか？"} %>
+     <%= link_to "戻る", customer_diaries_path %>
+    </div>
+  </div>
+</div>
