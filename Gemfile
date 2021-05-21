@@ -72,6 +72,8 @@ gem 'pry-byebug'
 gem 'kaminari','~> 1.2.1'
 gem "cocoon"
 
+gem 'simple_calendar', '~> 2.0'
+
 gem 'rakuten_web_service'
 
 gem 'dotenv-rails'

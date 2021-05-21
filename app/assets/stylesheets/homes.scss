@@ -4,33 +4,10 @@
 
 
 
-.main-container {
-  width: 100vw;
-  height: 100vh;
-  background-image :url(gum7.jpg);
-  background-possition: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: #464646;
-  z-index: 0;
-}
-
-.main-container::before {
-  content: ''
-  position absolute;
-  top: -5px;
-  bottom: -5px;
-  left: -5px;
-  right: -5px;
-  background: inherit;
-  filter: blur(2px);
-  z-index: -1;
-}
 
 .text-comment {
   text-shadow: 0 0 10px #333;
-  color: #ffffff;
+  color: #696969;
   font-famliy: 'QuintUppercaseFont';
   font-size: 18px;
   text-align: center;

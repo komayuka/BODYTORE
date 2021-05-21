@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+     <h3>記録</h3>
+
+
+     <%= link_to  "記録する", new_customer_diary_path %>
+     <%= month_calendar events: @diaries do |date, diaries| %>
+      <%= date.day %>
+       <% diaries.each do |diary| %>
+       <%= link_to diary.title, diary_path(diary.id) %>
+       <% end %>
+      <% end  %>
+    </div>
+  </div>
+</div>

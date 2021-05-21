@@ -42,6 +42,15 @@ class Trainer::TrainingMenusController < ApplicationController
     end
   end
 
+  def destroy
+    @training_menu = TrainingMenu.find(params[:id])
+    if @training_menu.destroy
+      redirect_to trainer_training_menus_path
+    else
+      render "edit"
+    end
+  end
+
   private
 
   def training_menu_params
