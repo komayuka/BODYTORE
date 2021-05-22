@@ -13,8 +13,8 @@
            <% else %>
             <p><%= attachment_image_tag current_customer, :customer_image, size: '120x120' %></p>
            <% end %>
-           <%= link_to "トレーニング記録", customer_diaries_path(@customer) %>
-           <%= link_to "お気に入りしたトレーナー", favorites_customers_path %>
+           <%= link_to "トレーニング記録", customer_diaries_path(@customer), class: "bottom-border" %>
+           <%= link_to "お気に入りしたトレーナー", favorites_customers_path, class: "bottom-border" %>
 
          </div>
 
@@ -58,7 +58,7 @@
           </table>
         </div>
       </div>
-       <%= link_to "編集", customer_customers_profile_edit_path(current_customer) %>
+       <%= link_to "編集", customer_customers_profile_edit_path(current_customer), class: "btn-flat-border" %>
     </div>
   </div>
 </div>

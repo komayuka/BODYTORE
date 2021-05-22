@@ -21,9 +21,10 @@
          </tr>
        </tbody>
      </table>
-     <%= link_to "編集", edit_customer_diary_path(@customer) %>
-     <%= link_to "削除", customer_diary_path, method: :delete, data: {confirm: "削除しますか？"} %>
-     <%= link_to "戻る", customer_diaries_path %>
+     <%= link_to "編集", edit_customer_diary_path(@customer), class: "btn-flat-border" %>
+     <%= link_to "削除", customer_diary_path, method: :delete, data: {confirm: "削除しますか？"}, class: "btn-flat-border" %>
+     <%= link_to "戻る", customer_diaries_path, class: "btn-flat-border" %>
+     <p></p>
     </div>
   </div>
 </div>

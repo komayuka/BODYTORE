@@ -73,6 +73,39 @@ a {
   border-radius: 15px;
 }
 
+
+//butoom
+.btn-flat-border {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.btn-flat-border:hover {
+  background: #67c5ff;
+  color: white;
+}
+
+.bottom-border {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #a3d6cc;
+  border: solid 2px #00947a;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.bottom-border:hover {
+  background: #a3d6cc;
+  color: white;
+}
+
+
 // footer
 footer {
   width: 100%;
