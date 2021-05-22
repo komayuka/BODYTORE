@@ -13,45 +13,52 @@ class Customer::DiariesController < ApplicationController
   end
 
   def show
-    @diaries = Diary.find(params[:id])
-  end
-
-  def update
-    @diary = current_customer.diaries.find(params[:id])
-    @diary.update(update_params)
-    redirect_to diaries_path(@customer.id)
+    @diary = Diary.find(params[:id])
   end
 
   def create
-    @diary = current_customer.diaries.new(diary_memo)
+    @diary = Diary.new(diary_params)
+    @diary.customer_id = current_customer.id
     if @diary.save
-      redirect_to diaries_path(@customre.id)
+      flash[:notice] = "投稿されました。"
+      redirect_to customer_diaries_path(@customer)
     else
       render "new"
     end
   end
 
+
   def edit
-    @diary = current_customer.diaries.find(params[:id])
+    @diary = Diary.find(params[:id])
+  end
+
+  def update
+    @diary = Diary.find(params[:id])
+    if @diary.update(diary_params)
+       flash[:notice] = "更新されました。"
+      redirect_to customer_diary_path
+    else
+      render "edit"
+    end
   end
 
   def destroy
-    @diaries = current_customer.diaries.find(params[:id])
-    @diaries.destroy
-    redirect_to diaries_path(@customer.id)
+    @diaries = Diary.find(params[:id])
+    if @diaries.destroy
+      redirect_to customer_diaries_path
+    else
+      render "edit"
+    end
   end
 
   private
 
-  def diary_memo
-    params.permit(:start_time, :title, :content, :weight, :customer_id)
-  end
 
   def set_customer
     @customer = current_customer
   end
 
-  def update_params
+  def diary_params
     params.require(:diary).permit(:start_time, :title, :content, :weight, :customer_id)
   end
 

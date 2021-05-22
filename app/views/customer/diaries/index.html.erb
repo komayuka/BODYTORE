@@ -1,14 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="col">
-     <h3>記録</h3>
+     <h3>記録カレンダー</h3>
+     <p><%= flash[:notice] %></p>
 
 
-     <%= link_to  "記録する", new_customer_diary_path %>
+     <%= link_to  "記録する", new_customer_diary_path, class: "btn-flat-border" %>
      <%= month_calendar events: @diaries do |date, diaries| %>
       <%= date.day %>
        <% diaries.each do |diary| %>
-       <%= link_to diary.title, diary_path(diary.id) %>
+       <%= link_to customer_diary_path(@customer, diary.id) do %>
+        <%= diary.title %>
+        <% end %>
        <% end %>
       <% end  %>
     </div>

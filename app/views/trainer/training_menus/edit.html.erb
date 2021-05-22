@@ -21,7 +21,7 @@
         <%= f.fields_for :trainings do |training| %>
            <%= render 'form_fields', ff: training %> <!--ffは子要素のフォーム-->
         <% end %>
-        <%= f.submit "更新" %>
+        <%= f.submit "更新", class: 'btn-flat-border' %>
         <% end %>
 
 
