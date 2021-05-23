@@ -1,9 +1,9 @@
 <% if trainer.favorited_by?(current_customer) %>
     <%= link_to favorites_path(trainer), method: :delete, remote: true do %>
-     ♥<%= trainer.favorites.count %> いいね
+     ♥<%= trainer.favorites.count %> お気に入りを外す
     <% end %>
     <% else %>
     <%= link_to favorites_path(trainer), method: :post, remote: true do %>
-     ♡<%= trainer.favorites.count %> いいね
+     ♡<%= trainer.favorites.count %> お気に入りする
     <% end %>
 <% end %>
