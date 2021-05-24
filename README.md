@@ -26,6 +26,9 @@
 アプリケーション詳細設計
 https://docs.google.com/spreadsheets/d/1hh3aAV4YldtBzftJWJ3VTw26a08P4Ie3tlwcQM2a3Cs/edit#gid=0
 
+テーブル定義書
+https://docs.google.com/spreadsheets/d/1FAJYWkbBa0py5L38K-GvDWFeq3z59yhn/edit#gid=1243549839
+
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1IznQNNq867pejbmzDetbyAXaGhtB5YweqgnDcc-Zbtw/edit#gid=0
 
