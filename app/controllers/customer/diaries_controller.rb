@@ -10,7 +10,7 @@ class Customer::DiariesController < ApplicationController
   def index
     @diary = Diary.new
     @diaries = Diary.all
-    @data = @diaries.group_by_day(:start_time, series: false).sum(:weight)
+    @weight_data = @diaries.group_by_day(:start_time, series: false).sum(:weight)
     #series 記録しない日も維持
   end
 
