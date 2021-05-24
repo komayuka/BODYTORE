@@ -14,7 +14,8 @@
         <% end %>
        <% end %>
       <% end  %>
-
+      <!--最小値から-5,最大値から+5,横軸=>日付,縦軸=>kg-->
+　　　<%= line_chart @data,curve: false, min: @data.values.min.to_i - 5, max: @data.values.max.to_i + 5, xtitle: "日付", ytitle: "Kg", width: "100%", height: "300px" %>
     </div>
   </div>
 </div>

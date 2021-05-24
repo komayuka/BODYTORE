@@ -10,9 +10,8 @@ class Customer::DiariesController < ApplicationController
   def index
     @diary = Diary.new
     @diaries = Diary.all
-    @weight = @diaries.map(&:weight)
-    @dates = @diaries.map{|diary| diary.created_at.strftime('%Y/%m/%d')}
-
+    @data = @diaries.group_by_day(:start_time, series: false).sum(:weight)
+    #series 記録しない日も維持
   end
 
   def show

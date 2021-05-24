@@ -74,6 +74,7 @@ gem "cocoon"
 
 gem 'simple_calendar', '~> 2.0'
 gem "chartkick"
+gem 'groupdate'
 gem 'rakuten_web_service'
 
 gem 'dotenv-rails'
