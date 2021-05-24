@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_21_070304) do
+ActiveRecord::Schema.define(version: 2021_05_24_061048) do
 
   create_table "customers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -47,6 +47,27 @@ ActiveRecord::Schema.define(version: 2021_05_21_070304) do
     t.integer "trainer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer "room_id", null: false
+    t.integer "customer_id"
+    t.integer "trainer_id"
+    t.text "message", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_messages_on_customer_id"
+    t.index ["room_id"], name: "index_messages_on_room_id"
+    t.index ["trainer_id"], name: "index_messages_on_trainer_id"
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.integer "customer_id"
+    t.integer "trainer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_rooms_on_customer_id"
+    t.index ["trainer_id"], name: "index_rooms_on_trainer_id"
   end
 
   create_table "trainers", force: :cascade do |t|

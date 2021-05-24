@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     end
     get 'trainers/profile/edit' => 'trainers#edit'
     patch 'trainers/profile' => 'trainers#update'
+    resources :rooms, only: [:index, :show]
+    resource :message, only: [:create]
   end
 
 
@@ -40,6 +42,8 @@ Rails.application.routes.draw do
      patch 'customers/profile' => 'customers#update'
      resources :diaries
      get :favorites, on: :collection
+     resources :rooms, only: [:index, :show]
+     resource :message, only: [:create]
     resources :trainers, only: [:index, :show] do
      resources :training_menus, only: [:index, :show]
     end

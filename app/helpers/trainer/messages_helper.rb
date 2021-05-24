@@ -1,0 +1,2 @@
+module Trainer::MessagesHelper
+end

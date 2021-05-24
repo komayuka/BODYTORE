@@ -9,10 +9,7 @@ class Customer::TrainersController < ApplicationController
     @trainer = Trainer.find(params[:id])
     @training_menus = @trainer.training_menus
     @favorites = Favorite.new
-  end
-
-  def favorites
-    @favorites_rank = Trainer.joins(:favorites).group(:trainer_id).order('count(trainer_id)desc')
+    @customer = Customer.find(params[:customer_id])
   end
 
 

@@ -2,6 +2,7 @@
   <div class="row">
     <div class="mt-5">
      <div class="col">
+       <p><%= flash[:notice] %></p>
        <h3>トレーニングメニュー詳細</h3>
 
      </div>
@@ -46,6 +47,7 @@
        </table>
        </div>
       <%= link_to '編集', edit_trainer_training_menu_path, class: 'btn-flat-border'%>
+      <%= link_to '戻る', trainer_training_menus_path, class: 'btn-flat-border' %>
       <%= link_to '削除', trainer_training_menu_path, method: :delete, data: {confirm: "削除しますか？"}, class: 'btn-flat-border' %>
     </div>
   </div>
