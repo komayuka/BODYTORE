@@ -4,6 +4,7 @@ class Customer::CustomersController < ApplicationController
 
   def show
     @customer = current_customer
+    @trainer = Trainer.all
   end
 
   def edit

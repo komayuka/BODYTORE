@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>チャット詳細</h3>
+      <%= @room.id %>
+      <% if @messages.blank? %>
+       <p>メッセージはありません</p>
+      <% else %>
+       <p>メッセージがあります</p>
+       <% @messages.each do |message| %>
+       <div>
+         <% if message.customer %>
+          <span><%= message.customer.customer_name %></span>
+         <% else %>
+          <span>トレーナー：</span>
+        <% end %>
+        <span><%= message.message %></span>
+       </div>
+       <% end %>
+      <% end %>
+      <%= form_with model: @message, url: customer_message_path, local: true do |f| %>
+       <%= f.text_field :message, class: "address-new-form" %>
+       <%= f.hidden_field :room_id, value: @room.id %>
+       <%= f.submit "送信", class: "register-green-btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>

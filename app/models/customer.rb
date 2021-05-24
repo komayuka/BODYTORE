@@ -10,6 +10,7 @@ class Customer < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :favorited_trainers, through: :favorites, source: :trainer
   has_many :diaries
+  has_many :messages, dependent: :destroy
 
   attachment :customer_image
 

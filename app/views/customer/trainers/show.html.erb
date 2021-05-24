@@ -14,6 +14,8 @@
           </div>
            <p><%= @trainer.trainer_name %></p>
            <p><%= @trainer.trainer_introduction %></p>
+           <!--チャット機能-->
+           <%= link_to "チャットする", customer_room_path(@customer, @room) %>
     </div>
      <div class="col-lg-8">
        <%= render 'customer/training_menus/index', menus:@training_menus %>
