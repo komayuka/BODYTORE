@@ -9,7 +9,6 @@ class Customer::TrainersController < ApplicationController
     @trainer = Trainer.find(params[:id])
     @training_menus = @trainer.training_menus
     @favorites = Favorite.new
-    @customer = Customer.find(params[:customer_id])
   end
 
 
