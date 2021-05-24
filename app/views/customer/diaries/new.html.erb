@@ -1,8 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-
-
+      <%= render 'layouts/error_messages', validation: @diary %>
       <%= form_with model: @diary, url: customer_diaries_path(@customer), local: true do |f| %>
 
        <label class="control-label" for="">タイトル</label>
