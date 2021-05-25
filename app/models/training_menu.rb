@@ -1,5 +1,6 @@
 class TrainingMenu < ApplicationRecord
-  validates :training_name, length: { maximum: 50 }
+  validates :training_name, presence: true, length: { maximum: 50 }
+  validates :description, presence: true
 
   belongs_to :trainer
   has_many :trainings

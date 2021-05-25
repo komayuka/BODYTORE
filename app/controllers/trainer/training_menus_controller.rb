@@ -26,7 +26,7 @@ class Trainer::TrainingMenusController < ApplicationController
       flash[:notice] = "編集が更新されました。"
       redirect_to trainer_training_menus_path(@trainer)
     else
-      render "index"
+      render "new"
     end
   end
 
