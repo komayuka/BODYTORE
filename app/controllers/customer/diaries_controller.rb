@@ -22,7 +22,7 @@ class Customer::DiariesController < ApplicationController
     @diary = Diary.new(diary_params)
     @diary.customer_id = current_customer.id
     if @diary.save
-      flash[:notice] = "投稿されました。"
+      flash[:success] = "投稿されました。"
       redirect_to customer_diaries_path(@customer)
     else
       render "new"
@@ -37,7 +37,7 @@ class Customer::DiariesController < ApplicationController
   def update
     @diary = Diary.find(params[:id])
     if @diary.update(diary_params)
-       flash[:notice] = "更新されました。"
+       flash[:success] = "更新されました。"
       redirect_to customer_diary_path
     else
       render "edit"

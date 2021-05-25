@@ -13,7 +13,7 @@ class Trainer::TrainersController < ApplicationController
   def update
     @trainer = current_trainer
     if @trainer.update(trainer_params)
-      flash[:notice] = "更新されました。"
+      flash[:success] = "更新されました。"
       redirect_to trainer_params
     else
       render "edit"

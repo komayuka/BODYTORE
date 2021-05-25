@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col">
      <h3>記録カレンダー</h3>
-     <p><%= flash[:notice] %></p>
+     <%= render 'layouts/flash' %>
 
 
      <%= link_to  "記録する", new_customer_diary_path, class: "btn-flat-border" %>

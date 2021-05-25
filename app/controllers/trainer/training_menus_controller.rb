@@ -23,7 +23,7 @@ class Trainer::TrainingMenusController < ApplicationController
     #トレーニングメニューにトレーナーidを関連付け
     @training_menu.trainer_id = current_trainer.id
     if @training_menu.save
-      flash[:notice] = "編集が更新されました。"
+      flash[:success] = "編集が更新されました。"
       redirect_to trainer_training_menus_path(@trainer)
     else
       render "new"
@@ -37,7 +37,7 @@ class Trainer::TrainingMenusController < ApplicationController
   def update
     @training_menu = TrainingMenu.find(params[:id])
     if @training_menu.update(training_menu_params)
-      flash[:notice] = "編集が更新されました。"
+      flash[:success] = "編集が更新されました。"
       redirect_to trainer_training_menu_path
     else
       render "edit"
