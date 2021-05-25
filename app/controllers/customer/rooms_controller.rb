@@ -12,11 +12,9 @@ class Customer::RoomsController < ApplicationController
     @customer = Customer.find(params[:customer_id])
   end
 
- private
+  private
 
-   def set_room_or_move
-     @room = Room.find_by(params[:id])
-   end
-
-
+  def set_room_or_move
+    @room = Room.find_by(params[:id])
+  end
 end

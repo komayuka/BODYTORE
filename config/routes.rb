@@ -4,31 +4,28 @@ Rails.application.routes.draw do
   get 'homes/customer_top' => 'homes#customer_top'
   get 'rakuten/rakuten_search' => 'rakuten#search'
 
-  devise_for :trainers,  controllers: {
-    sessions:      'trainers/sessions',
-    password:      'trainers/password',
+  devise_for :trainers, controllers: {
+    sessions: 'trainers/sessions',
+    password: 'trainers/password',
     registrations: 'trainers/registrations'
   }
 
-
-  #trainer側サイトrouting
+  # trainer側サイトrouting
   scope module: :trainer do
     resources :trainers do
       resources :training_menus
     end
     get 'trainers/profile/edit' => 'trainers#edit'
     patch 'trainers/profile' => 'trainers#update'
-    resources :rooms, only: [:index, :show]
+    resources :rooms, only: %i[index show]
     resource :message, only: [:create]
   end
 
-
   devise_for :customers, controllers: {
-    sessions:      'customers/sessions',
-    password:      'customers/password',
+    sessions: 'customers/sessions',
+    password: 'customers/password',
     registrations: 'customers/registrations'
   }
-
 
   # customer側サイトrouting
   scope module: :customer do
@@ -38,16 +35,15 @@ Rails.application.routes.draw do
     post 'customers/trainers/:trainer_id/favorites' => 'favorites#create', as: 'favorites'
     delete 'customers/trainers/:trainer_id/favorites' => 'favorites#destroy'
     resources :customers do
-     get 'customers/profile/edit' => 'customers#edit'
-     patch 'customers/profile' => 'customers#update'
-     resources :diaries
-     get :favorites, on: :collection
-     resources :rooms, only: [:index, :show]
-     resource :message, only: [:create]
-    resources :trainers, only: [:index, :show] do
-     resources :training_menus, only: [:index, :show]
-    end
+      get 'customers/profile/edit' => 'customers#edit'
+      patch 'customers/profile' => 'customers#update'
+      resources :diaries
+      get :favorites, on: :collection
+      resources :rooms, only: %i[index show]
+      resource :message, only: [:create]
+      resources :trainers, only: %i[index show] do
+        resources :training_menus, only: %i[index show]
+      end
     end
   end
-
- end
+end

@@ -11,11 +11,9 @@ class Trainer::RoomsController < ApplicationController
     @messages = Message.where(room_id: @room.id)
   end
 
+  private
 
-private
-
- def set_room
-   @room = Room.find_by(params[:id])
- end
-
+  def set_room
+    @room = Room.find_by(params[:id])
+  end
 end
