@@ -21,4 +21,4 @@
 //= require turbolinks
 //= require cocoon
 //= require_tree
-//= require skippr.js
+//= require skippr
