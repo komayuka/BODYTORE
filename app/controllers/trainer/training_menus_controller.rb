@@ -4,7 +4,7 @@ class Trainer::TrainingMenusController < ApplicationController
 
   def new
     @training_menu = TrainingMenu.new
-    #trainings一緒に保存
+    # trainings一緒に保存
     @training_menu.trainings.build
   end
 
@@ -20,13 +20,13 @@ class Trainer::TrainingMenusController < ApplicationController
 
   def create
     @training_menu = TrainingMenu.new(training_menu_params)
-    #トレーニングメニューにトレーナーidを関連付け
+    # トレーニングメニューにトレーナーidを関連付け
     @training_menu.trainer_id = current_trainer.id
     if @training_menu.save
-      flash[:success] = "編集が更新されました。"
+      flash[:success] = '編集が更新されました。'
       redirect_to trainer_training_menus_path(@trainer)
     else
-      render "new"
+      render 'new'
     end
   end
 
@@ -37,10 +37,10 @@ class Trainer::TrainingMenusController < ApplicationController
   def update
     @training_menu = TrainingMenu.find(params[:id])
     if @training_menu.update(training_menu_params)
-      flash[:success] = "編集が更新されました。"
+      flash[:success] = '編集が更新されました。'
       redirect_to trainer_training_menu_path
     else
-      render "edit"
+      render 'edit'
     end
   end
 
@@ -49,7 +49,7 @@ class Trainer::TrainingMenusController < ApplicationController
     if @training_menu.destroy
       redirect_to trainer_training_menus_path
     else
-      render "edit"
+      render 'edit'
     end
   end
 
@@ -57,13 +57,11 @@ class Trainer::TrainingMenusController < ApplicationController
 
   def training_menu_params
     params.require(:training_menu).permit(:trainer_id, :training_name, :category, :description, :training_menu_status,
-                                           #トレーニングテーブルに必要なカラム
-                                           trainings_attributes: [:id, :training_status, :training_name, :training_description, :training_image, :_destroy]
-                                         )
+                                          # トレーニングテーブルに必要なカラム
+                                          trainings_attributes: %i[id training_status training_name training_description training_image _destroy])
   end
 
   def set_trainer
     @trainer = current_trainer
   end
-
 end

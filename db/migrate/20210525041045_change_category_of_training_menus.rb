@@ -6,5 +6,4 @@ class ChangeCategoryOfTrainingMenus < ActiveRecord::Migration[5.2]
   def down
     change_column :training_menus, :category, :integer, null: false
   end
-
 end

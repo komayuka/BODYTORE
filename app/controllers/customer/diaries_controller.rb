@@ -11,7 +11,7 @@ class Customer::DiariesController < ApplicationController
     @diary = Diary.new
     @diaries = Diary.all
     @weight_data = @diaries.group_by_day(:start_time, series: false).sum(:weight)
-    #series 記録しない日も維持
+    # series 記録しない日も維持
   end
 
   def show
@@ -22,13 +22,12 @@ class Customer::DiariesController < ApplicationController
     @diary = Diary.new(diary_params)
     @diary.customer_id = current_customer.id
     if @diary.save
-      flash[:success] = "投稿されました。"
+      flash[:success] = '投稿されました。'
       redirect_to customer_diaries_path(@customer)
     else
-      render "new"
+      render 'new'
     end
   end
-
 
   def edit
     @diary = Diary.find(params[:id])
@@ -37,10 +36,10 @@ class Customer::DiariesController < ApplicationController
   def update
     @diary = Diary.find(params[:id])
     if @diary.update(diary_params)
-       flash[:success] = "更新されました。"
+      flash[:success] = '更新されました。'
       redirect_to customer_diary_path
     else
-      render "edit"
+      render 'edit'
     end
   end
 
@@ -49,12 +48,11 @@ class Customer::DiariesController < ApplicationController
     if @diaries.destroy
       redirect_to customer_diaries_path
     else
-      render "edit"
+      render 'edit'
     end
   end
 
   private
-
 
   def set_customer
     @customer = current_customer
@@ -63,6 +61,4 @@ class Customer::DiariesController < ApplicationController
   def diary_params
     params.require(:diary).permit(:start_time, :title, :content, :weight, :customer_id)
   end
-
-
 end
