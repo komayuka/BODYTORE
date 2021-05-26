@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     end
     get 'trainers/profile/edit' => 'trainers#edit'
     patch 'trainers/profile' => 'trainers#update'
+    resources :reviews, only: %i[index]
     resources :rooms, only: %i[index show]
     resource :message, only: [:create]
   end
@@ -43,6 +44,7 @@ Rails.application.routes.draw do
       resource :message, only: [:create]
       resources :trainers, only: %i[index show] do
         resources :training_menus, only: %i[index show]
+        resources :reviews, only: %i[index new update create destroy edit]
       end
     end
   end

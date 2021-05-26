@@ -9,6 +9,9 @@ class Customer::TrainersController < ApplicationController
     @trainer = Trainer.find(params[:id])
     @training_menus = @trainer.training_menus
     @favorites = Favorite.new
+    @review = Review.new
+    @reviews = Review.all.order(created_at: "DESC")
+    @customer = current_customer
   end
 
   private
@@ -16,4 +19,6 @@ class Customer::TrainersController < ApplicationController
   def trainer_params
     params.require(:trainer).permit(:trainer_name, :trainer_introduction, :trainer_image_id, :rate, :gender)
   end
+
+
 end
