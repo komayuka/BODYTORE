@@ -1,0 +1,19 @@
+<div classs="container">
+  <div class="row">
+    <div class="col">
+      <h3>クチコミ編集</h3>
+       <%= render 'layouts/error_messages', validation: @review %>
+       <%= form_with url:customer_trainer_reviews_path, local: true do |f| %>
+
+       <label class="control-label" for="">タイトル</label>
+         <%= f.text_field :title, class: 'form-control' %>
+
+       <label class="control-label" for="">内容詳細</label>
+         <%= f.text_area :body, class: 'form-control' %><br />
+
+       <p><%= f.submit "登録", class: "btn-flat-border" %></p>
+      <% end %>
+
+    </div>z
+  </div>
+</div>
