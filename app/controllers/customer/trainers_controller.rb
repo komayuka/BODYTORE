@@ -9,9 +9,8 @@ class Customer::TrainersController < ApplicationController
     @trainer = Trainer.find(params[:id])
     @training_menus = @trainer.training_menus
     @favorites = Favorite.new
-    @review = Review.new
-    @reviews = Review.all.order(created_at: "DESC")
     @customer = current_customer
+    @reviews = @trainer.reviews.order(created_at: "DESC").limit(5)
   end
 
   private

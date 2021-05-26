@@ -4,17 +4,19 @@ class Customer::ReviewsController < ApplicationController
 
   def new
     @review = Review.new
-    @customer = current_customer
+    @trainer = Trainer.find(params[:trainer_id])
   end
 
   def index
     @review = Review.new
-    @reviews = Review.all.order(created_at: "DESC")
+    @reviews = Review.all.order(created_at: "DESC").page(params[:page]).per(10)
   end
 
   def create
-    @review = Review.find(params[:id])
-    if @review.update(review_params)
+    @review = Review.new(review_params)
+    @review.customer_id = current_customer.id
+    @review.trainer_id = params[:trainer_id]
+    if @review.save
       flash[:success] = '登録されました。'
      redirect_to customer_trainers_path
     else
@@ -28,9 +30,11 @@ class Customer::ReviewsController < ApplicationController
 
   def update
     @review = Review.find(params[:id])
+    @review.customer_id = current_customer.id
+    @review.trainer_id = params[:trainer_id]
     if @review.update(review_params)
       flash[:success] = '変更されました。'
-      redirect_to customer_traine_path
+      redirect_to customer_trainer_path
     else
       render 'edit'
     end
@@ -49,7 +53,7 @@ class Customer::ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:title, :body, :customer_id, :trainer_id)
+    params.permit(:title, :body, :customer_id, :trainer_id)
   end
 
 end

@@ -15,8 +15,9 @@
            <p><%= @trainer.trainer_name %></p>
            <p><%= @trainer.trainer_introduction %></p>
            <!--クチコミ機能-->
-           <%= render partial: 'customer/reviews/index', locals: { reviews: @reviews} %>
-           <%= render partial: 'customer/reviews/new', locals: { customer: @customer,trainer: @trainer} %>
+           <%= render partial: 'customer/reviews/review_new', locals: { reviews: @reviews} %>
+           <%= link_to 'クチコミ投稿', new_customer_trainer_review_path(@customer, @trainer) %>
+           <%= link_to '>>もっと見る', customer_trainer_reviews_path(@customer.id, @trainer.id) %>
     </div>
      <div class="col-lg-8">
        <%= render 'customer/training_menus/index', menus:@training_menus %>
