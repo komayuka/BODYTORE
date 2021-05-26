@@ -18,12 +18,32 @@
             <td><%= training.training_name %></td>
             <td><%= training.training_description %></td>
             <td>
+               <div class="pop-box">
+                <label for="popup-on">
+                 <label for="popup-on">
+                  <div class="btn-open">
+                   <% if training.training_image == nil %>
+                    <%= image_tag asset_path('default.png'), size: '120x120', class: "layer-img" %>
+                   <% else %>
+                    <%= attachment_image_tag training, :training_image, size: '120x120', class: "layer-img" %>
+                   <% end %>
+                  </div>
+                 </label>
+                 <input type="checkbox" id="popup-on">
+                 <div class="popup">
+                  <label for="popup-on" class="icon-close">×</label>
+                  <div class="popup-content">
+                   <% if training.training_image == nil %>
+                    <%= image_tag asset_path('default.png'), class: "layer-img" %>
+                   <% else %>
+                    <%= attachment_image_tag training, :training_image, class: "layer-img" %>
+                   <% end %>
+                  </div>
+                  <label for="popup-on"><div class="btn-close">閉じる</div></label>
+                 </div>
+                </label>
+               </div>
 
-                <% if training.training_image == nil %>
-                 <%= image_tag asset_path('default.png'), size: '120x120' %>
-                <% else %>
-                 <%= attachment_image_tag training, :training_image, size: '120x120' %>
-                <% end %>
             </td>
           <% end %>
           </tr>

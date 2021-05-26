@@ -1,45 +1,50 @@
  <div class="container">
   <div class="row">
-   <div class="col">
-
-
- <h2>新規登録</h2>
+   <div class="col-12 col-md-5 mx-auto p-4 text-center">
+   <h2>新規登録</h2>
    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
    <%= render "trainers/shared/error_messages", resource: resource %>
+    <table class="table table-borderless">
+     <tbody>
+      <tr>
+       <td align="right"><%= f.label :trainer_name, "名前" %></td>
+       <td align="left"><%= f.text_field :trainer_name, autofocus: true %></td>
+      </tr>
 
-    <div class="field">
-     <%= f.label :trainer_name, "名前" %><br />
-     <%= f.text_field :trainer_name, autofocus: true %>
-    </div>
+      <tr>
+       <td align="right"><%= f.label :email, "メールアドレス" %></td>
+       <td align="left"><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
+      </tr>
 
-    <div class="field">
-     <%= f.label :email, "メールアドレス" %><br />
-     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
+      <tr>
+       <td align="right"><%= f.label :gender, "性別" %></td>
+       <td align="left"><%= f.select :gender, Trainer.genders.keys, {prompt:"選択してください"}, class: 'signup_input signup_input--gender error-form--gender' %></td>
+      </tr>
 
-    <div class="gender">
-     <%= f.label :gender, "性別" %><br />
-     <%= f.select :gender, Trainer.genders.keys, {prompt:"選択してください"}, class: 'signup_input signup_input--gender error-form--gender' %>
-    </div>
+      <tr>
+       <td align="right">
+         <%= f.label :password %>
+        <% if @minimum_password_length %>
+         <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %>
+       </td>
+       <td align="left"><%= f.password_field :password, autocomplete: "new-password" %></td>
+      </tr>
 
-    <div class="field">
-     <%= f.label :password %>
-     <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-     <% end %><br />
-     <%= f.password_field :password, autocomplete: "new-password" %>
-    </div>
+      <tr>
+       <td align="right"><%= f.label :password_confirmation %></td>
+       <td align="left"><%= f.password_field :password_confirmation, autocomplete: "new-password" %></td>
+      </tr>
 
-    <div class="field">
-     <%= f.label :password_confirmation %><br />
-     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
-
-    <div class="actions"><br />
-     <%= f.submit "Sign up" %>
-    </div>
+      <tr>
+       <td colspan="2">
+        <%= f.submit "登録する", class: "btn-flat-border" %>
+       </td>
+      </tr>
+     </tbody>
+    </table>
    <% end %>
-<%= render "trainers/shared/links" %>
+   <p>ログイン済みの方はこちら <%= render "trainers/shared/links" %></p>
   </div>
  </div>
 </div>
