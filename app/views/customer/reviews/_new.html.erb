@@ -1,0 +1,20 @@
+<div classs="container">
+  <div class="row">
+    <div class="col">
+
+      <h3>新規クチコミ投稿</h3>
+       <%= form_with model:[customer, trainer], local: true do |f| %>
+
+       <label class="control-label" for="">タイトル</label>
+         <%= f.text_field :title, class: 'form-control' %>
+
+       <label class="control-label" for="">内容詳細</label>
+         <%= f.text_field :body, class: 'form-control' %>
+         <%= f.hidden_field :customer_id, :value => @customer.id %>
+
+       <p><%= f.submit "登録", class: "btn-flat-border" %></p>
+      <% end %>
+
+    </div>
+  </div>
+</div>
