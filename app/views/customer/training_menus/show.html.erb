@@ -18,6 +18,7 @@
             <td><%= training.training_name %></td>
             <td><%= training.training_description %></td>
             <td>
+
                 <% if training.training_image == nil %>
                  <%= image_tag asset_path('default.png'), size: '120x120' %>
                 <% else %>

@@ -2,7 +2,7 @@ class TrainingMenu < ApplicationRecord
   validates :training_name, presence: true, length: { maximum: 50 }
   validates :description, presence: true
 
-  belongs_to :trainer
+  belongs_to :trainer, dependent: :destroy
   has_many :trainings, dependent: :destroy
   # 別のモデルを同じフォームで保存/trainings単体削除
   accepts_nested_attributes_for :trainings, allow_destroy: true
