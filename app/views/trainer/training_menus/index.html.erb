@@ -15,7 +15,6 @@
       </div>
       <thead>
         <tr>
-          <th>トレーニングID</th>
           <th>トレーニング名</th>
           <th>カテゴリ</th>
           <th>トレーニング説明</th>
@@ -24,7 +23,6 @@
       <tbody>
         <% @training_menus.each do |training_menu| %>
         <tr>
-          <td><%= training_menu.id %></td>
           <td><%= link_to trainer_training_menu_path(@trainer, training_menu.id) do %>
               <%= training_menu.training_name %>
               <% end %>

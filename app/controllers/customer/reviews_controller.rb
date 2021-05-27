@@ -11,7 +11,7 @@ class Customer::ReviewsController < ApplicationController
     @review = Review.new
     @trainer = Trainer.find(params[:trainer_id])
     @reviews = @trainer.reviews.order(created_at: 'DESC').page(params[:page]).per(10)
-    @reviews_all = @reviews
+    @reviews_all = @trainer.reviews
   end
 
   def create

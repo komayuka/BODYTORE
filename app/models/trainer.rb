@@ -5,7 +5,6 @@ class Trainer < ApplicationRecord
   has_many :trainings, dependent: :destroy
   has_many :training_menus, dependent: :destroy
   has_many :favorites, dependent: :destroy
-  has_many :messages, dependent: :destroy
   has_many :reviews, dependent: :destroy
 
   attachment :trainer_image
