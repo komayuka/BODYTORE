@@ -9,6 +9,7 @@
           <th>タイトル</th>
           <th>内容</th>
           <th></th>
+          <th></th>
          </tr>
         </thead>
         <tbody>
@@ -19,7 +20,8 @@
               <td><%= review.title %></td>
               <td> <%= review.body %></td>
               <% if review_customer == current_customer %>
-               <td><%= link_to '編集', edit_customer_trainer_review_path(review.customer_id, review.trainer_id, review.id) %></td>
+               <td><%= link_to "編集", edit_customer_trainer_review_path(review.customer_id, review.trainer_id, review.id) %></td>
+               <td><%= link_to "削除", customer_trainers_path, method: :delete, data: {confirm: "削除しますか？"} %></td>
              <% end %>
             </tr>
             <% end %>
