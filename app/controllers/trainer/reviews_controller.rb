@@ -3,6 +3,7 @@ class Trainer::ReviewsController < ApplicationController
 
   def index
     @reviews = Review.all.order(created_at: "DESC").page(params[:page]).per(10)
+    @reviews_all = Review.all
   end
 
 

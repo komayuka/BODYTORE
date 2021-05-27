@@ -10,7 +10,7 @@ class Customer::TrainersController < ApplicationController
     @training_menus = @trainer.training_menus
     @favorites = Favorite.new
     @customer = current_customer
-    @reviews = @trainer.reviews.order(created_at: "DESC").limit(5)
+    @reviews = @trainer.reviews.order(created_at: "DESC").limit(2)
   end
 
   private

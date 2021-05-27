@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h3>コメント一覧</h3>
+      <h3>クチコミ一覧</h3>
+      (全<%= @reviews_all.count %>件)
       <%= render 'layouts/flash' %>
       <table class="table">
         <thead>
@@ -14,9 +15,14 @@
         <tbody>
           <tr>
              <% @reviews.each do |review| %>
+             <% review_customer = review.customer %>
              <td><%= review.customer.customer_name %></td>
              <td><%= review.title %></td>
              <td><%= review.body %></td>
+             <% if review_customer == current_customer %>
+               <td><%= link_to "編集", edit_customer_trainer_review_path(review.customer_id, review.trainer_id, review.id), class: "btn-flat-border" %></td>
+               <td><%= link_to "削除", customer_trainer_review_path(review.customer_id, review.trainer_id, review.id), method: :delete, data: {confirm: "削除しますか？"}, class: "btn-flat-border" %></td>
+             <% end %>
           </tr>
           <% end %>
         </tbody>
