@@ -9,7 +9,7 @@ class Customer::ReviewsController < ApplicationController
 
   def index
     @review = Review.new
-    @reviews = Review.all.order(created_at: "DESC").page(params[:page]).per(10)
+    @reviews = Review.all.order(created_at: 'DESC').page(params[:page]).per(10)
     @reviews_all = Review.all
   end
 
@@ -19,9 +19,9 @@ class Customer::ReviewsController < ApplicationController
     @review.trainer_id = params[:trainer_id]
     if @review.save
       flash[:success] = '登録されました。'
-     redirect_to file: "customer/trainers/index"
+      redirect_to file: 'customer/trainers/index'
     else
-     render 'new'
+      render 'new'
     end
   end
 
@@ -54,5 +54,4 @@ class Customer::ReviewsController < ApplicationController
   def review_params
     params.require(:review).permit(:title, :body, :customer_id, :trainer_id)
   end
-
 end
