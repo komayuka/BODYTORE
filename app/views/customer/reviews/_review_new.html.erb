@@ -2,21 +2,29 @@
   <div class="row">
     <div class="col">
       <h3>新着クチコミ一覧</h3>
-      <%= render 'layouts/flash' %>
-
-
-      <% reviews.each do |review| %>
-       <% review_customer = review.customer %>
-       <%= review.customer.customer_name %>
-       <%= review.title %>
-       <%= review.body %>
-
-       <% if review_customer == current_customer %>
-       <p><%= link_to '編集', edit_customer_trainer_review_path(review.customer_id, review.trainer_id, review.id) %></p>
-       <p></p>
-       <% end %>
-        <% end %>
-
+      <table class="table">
+        <thead>
+         <tr>
+          <th>名前</th>
+          <th>タイトル</th>
+          <th>内容</th>
+          <th></th>
+         </tr>
+        </thead>
+        <tbody>
+            <tr>
+             <% reviews.each do |review| %>
+              <% review_customer = review.customer %>
+              <td><%= review.customer.customer_name %></td>
+              <td><%= review.title %></td>
+              <td> <%= review.body %></td>
+              <% if review_customer == current_customer %>
+               <td><%= link_to '編集', edit_customer_trainer_review_path(review.customer_id, review.trainer_id, review.id) %></td>
+             <% end %>
+            </tr>
+            <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
