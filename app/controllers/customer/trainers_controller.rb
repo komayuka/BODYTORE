@@ -10,7 +10,7 @@ class Customer::TrainersController < ApplicationController
     @training_menus = @trainer.training_menus
     @favorites = Favorite.new
     @customer = current_customer
-    @reviews = @trainer.reviews.order(created_at: "DESC").limit(2)
+    @reviews = @trainer.reviews.order(created_at: 'DESC').limit(2)
   end
 
   private
@@ -18,6 +18,4 @@ class Customer::TrainersController < ApplicationController
   def trainer_params
     params.require(:trainer).permit(:trainer_name, :trainer_introduction, :trainer_image_id, :rate, :gender)
   end
-
-
 end
