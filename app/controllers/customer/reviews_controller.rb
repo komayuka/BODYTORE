@@ -9,8 +9,9 @@ class Customer::ReviewsController < ApplicationController
 
   def index
     @review = Review.new
-    @reviews = Review.all.order(created_at: 'DESC').page(params[:page]).per(10)
-    @reviews_all = Review.all
+    @trainer = Trainer.find(params[:trainer_id])
+    @reviews = @trainer.reviews.order(created_at: 'DESC').page(params[:page]).per(10)
+    @reviews_all = @reviews
   end
 
   def create
