@@ -13,6 +13,7 @@
           <% else %>
            <p><%= attachment_image_tag current_trainer, :trainer_image, size: '120x120' %></p>
           <% end %>
+          <div><%= link_to 'クチコミ一覧', reviews_path, class: "bottom-border" %></div><br />
         </div>
         <div class="col-lg-8">
          <table class="table">
@@ -31,7 +32,6 @@
            </tr>
           </thead>
          </table>
-
       </div>
       <%= link_to "編集", trainers_profile_edit_path, class: "btn-flat-border" %>
     </div>

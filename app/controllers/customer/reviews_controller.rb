@@ -18,7 +18,7 @@ class Customer::ReviewsController < ApplicationController
     @review.trainer_id = params[:trainer_id]
     if @review.save
       flash[:success] = '登録されました。'
-     redirect_to customer_trainers_path
+     redirect_to file: "customer/trainers/index"
     else
      render 'new'
     end
