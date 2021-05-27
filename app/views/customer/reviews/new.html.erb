@@ -8,13 +8,11 @@
        <label class="control-label" for="">タイトル</label>
          <%= f.text_field :title, class: 'form-control' %>
 
-       <label class="control-label" for="">ひとこと(最大50文字)</label>
-         <%= f.text_area :body, class: 'form-control', id: "input-text", rows: 4 %>
-         <p id="counter">0文字</p><br />
+       <label class="control-label" for="">ひとこと</label>
+         <%= f.text_area :body, class: 'form-control' %><br />
 
        <p><%= f.submit "登録", class: "btn-flat-border" %></p>
       <% end %>
     </div>
   </div>
 </div>
-<%= javascript_include_tag 'skippr.js' %>
