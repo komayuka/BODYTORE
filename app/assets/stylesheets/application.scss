@@ -38,6 +38,10 @@ body {
    background-color: #f0fff0;
 }
 
+main {
+   min-height: 80vh;
+}
+
 
 
 // header
@@ -135,6 +139,7 @@ footer {
   width: 70vw;
   height: 55vw;
   overflow-y: scroll;
+  z-index: 9999;
 }
 /* チェックボックスの初期設定 */
 #popup-on{
