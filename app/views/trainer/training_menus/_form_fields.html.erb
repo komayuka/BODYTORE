@@ -11,7 +11,7 @@
    <tbody>
 <tr class="nested-fields">
   <td><%= ff.text_field :training_name %></td>
-  <td><%= ff.text_field :training_description %></td>
+  <td><%= ff.text_area :training_description %></td>
   <td><%= ff.attachment_field :training_image %></td>
   <%= ff.hidden_field :training_status, {value: "未着手"} %>
 </tr>
