@@ -20,6 +20,13 @@ class Customer::CustomersController < ApplicationController
     end
   end
 
+  def destroy
+    @customer = current_customer
+    @customer.destroy
+    flash[:success] = "会員退会しました。"
+    redirect_to :root
+  end
+
   def favories
     @favorited_trainer = current_customer.favorited_trainers
   end

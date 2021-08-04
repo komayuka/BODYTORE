@@ -8,7 +8,7 @@ class Customer < ApplicationRecord
   has_many :training_menus, dependent: :destroy
   has_many :trainings, through: :training_menu
   has_many :favorites, dependent: :destroy
-  has_many :favorited_trainers, through: :favorites, source: :trainer
+  has_many :favorited_trainers, through: :favorites, source: :trainer, dependent: :destroy
   has_many :diaries, dependent: :destroy
   has_many :reviews, dependent: :destroy
 
