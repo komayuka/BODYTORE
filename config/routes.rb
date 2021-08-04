@@ -36,6 +36,7 @@ Rails.application.routes.draw do
     resources :customers do
       get 'customers/profile/edit' => 'customers#edit'
       patch 'customers/profile' => 'customers#update'
+      delete 'customers/profile/delete' => 'customers#destroy'
       resources :diaries
       get :favorites, on: :collection
       resources :trainers, only: %i[index show] do

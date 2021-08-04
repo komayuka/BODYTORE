@@ -58,6 +58,7 @@
         </div>
       </div>
        <%= link_to "編集", customer_customers_profile_edit_path(current_customer), class: "btn-flat-border" %>
+       <%= link_to "退会", customer_customers_profile_delete_path(current_customer), method: :delete, "deta-confirm" => "本当に退会しますか？", class: "btn-flat-border" %>
     </div>
   </div>
 </div>
